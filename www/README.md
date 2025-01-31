@@ -3,7 +3,7 @@
 ## How to build
 
 ```
-go run main.go && cp styles/style.css ./out/
+go run main.go && cp styles/style.css ./out/ && cp js/sort.js ./out/
 ```
 
 ## How to run
