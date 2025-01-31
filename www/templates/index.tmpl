@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StorageBeat</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+   <header>
+        <h1>StorageBeat</h1>
+        <div>Decentralized storage index</div>
+    </header>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{range $index, $row := .TableData}}
+            <tr>
+                <td>{{$index}}</td>
+                <td>{{index $row 0}}</td>
+            </tr>
+            {{end}}
+        </tbody>
+    </table>
+</body>
+</html>
