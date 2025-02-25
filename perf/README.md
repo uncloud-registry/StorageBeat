@@ -12,9 +12,9 @@
 
 - [x] Develop rationale and commit to this repo. @awmacpherson
   - [ ] First feedback cycle.
-- [ ] Establish experimental design + commit.
+- [x] Establish experimental design + commit.
 - [ ] Implement benchmark suite. @eshavkun
-- [ ] Select target services + commit.
+- [x] Select target services + commit.
 - [ ] Obtain quotas + access and share. (How?)
 - [ ] Run benchmarks. (Where should we save outputs?)
 
