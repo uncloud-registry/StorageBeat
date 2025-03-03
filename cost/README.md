@@ -17,7 +17,7 @@ Specify properties that would go in a StorageBeat table, like
 
 ## Data collection methodology
 
-Considerations when obtaining pricing data
+Considerations when obtaining pricing datat
 
 
 
@@ -88,3 +88,11 @@ Considerations when obtaining pricing data
 * GPU:  Checked if large operator outfits tend to use these
 
 * CPU:  Checked if large operator outfits tend to use these
+
+
+
+## TODO
+
+- [ ] Mention Future Discounting of Confidence in Guarantees (FDCG).
+- [ ] Use Arweave as example
+- [ ] Do a regression
