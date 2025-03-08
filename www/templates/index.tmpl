@@ -18,14 +18,18 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Name</th>
+                {{range $index, $heading := .Headings}}
+                <th>{{$heading}}</th>
+                {{end}}
             </tr>
         </thead>
         <tbody>
             {{range $index, $row := .TableData}}
             <tr>
                 <td>{{$index}}</td>
-                <td>{{index $row 0}}</td>
+                {{range $index, $value := $row}}
+                <td>{{$value}}</td>
+                {{end}}
             </tr>
             {{end}}
         </tbody>

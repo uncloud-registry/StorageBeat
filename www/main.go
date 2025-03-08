@@ -9,6 +9,7 @@ import (
 type PageData struct {
 	Title     string
 	TableData [][]string
+	Headings  []string
 }
 
 func main() {
@@ -26,10 +27,14 @@ func main() {
 		panic(err)
 	}
 
+	headings := records[0]
+	records = records[1:]
+
 	// Define the data to be passed into the template
 	data := PageData{
 		Title:     "StorageBeat",
 		TableData: records,
+		Headings:  headings,
 	}
 
 	// Parse the template file
