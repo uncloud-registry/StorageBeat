@@ -1,0 +1,13 @@
+[Unit]
+Description=Upload random data to Swarm and run download test
+
+[Service]
+WorkingDirectory=~/storagebeat/StorageBeat/perf
+ExecStart=~/uploadAndTest.sh
+Restart=on-failure
+RestartSec=10s
+StartLimitInterval=5min
+StartLimitBurst=3
+
+[Install]
+WantedBy=default.target

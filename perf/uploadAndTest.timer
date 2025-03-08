@@ -1,0 +1,10 @@
+[Unit]
+Description="Run Swarm upload and test daily"
+
+[Timer]
+OnCalendar=*-*-* 12:00:00
+Unit=uploadAndTest.service
+Persistent=true
+
+[Install]
+WantedBy=default.target
