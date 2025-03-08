@@ -1,3 +1,4 @@
 .env
 
 perf/tests/*
+perf/arweave_env.sh
