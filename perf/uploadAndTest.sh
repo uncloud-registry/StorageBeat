@@ -6,7 +6,7 @@ else
   TARGET=dryrun
 fi
 
-. arweave_env.sh
+. upload_env.sh
 
 TESTSCRIPT=StorageBeat.yml
 TIMESTAMP=$(date +%s)

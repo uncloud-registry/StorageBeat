@@ -1,4 +1,4 @@
 .env
 
 perf/tests/*
-perf/arweave_env.sh
+perf/upload_env.sh
