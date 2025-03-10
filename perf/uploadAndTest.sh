@@ -19,6 +19,10 @@ upload() {
   case $1 in
     swarm)
       STAMP=$(swarm-cli stamp list --least-used --limit 1 --quiet --hide-usage)
+      if [[ -z "${STAMP}" ]]; then
+        echo "You do not have any stamps."
+        exit 1
+      fi
       UPLOAD="swarm-cli upload tests/random_data_file_${2} --stamp $STAMP | awk '/hash/ {print \$3}'"
       ;;
     arweave)
