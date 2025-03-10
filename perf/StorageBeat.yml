@@ -28,7 +28,7 @@ config:
         nonExisting: 'bafybeienhfkaupae32imtef6mtxi4el6noeczjlodeonbuwyfrftoidrwq'
         # nonExisting: 'bafybeigccimv3zqm5g4jt363faybagywkvqbrismoquogimy7kvz2sj7sq/test'
     s3:
-      target: https://hel1.your-objectstorage.com/shtuka
+      target: https://shtuka.hel1.your-objectstorage.com
       http:
         timeout: 100
       variables:

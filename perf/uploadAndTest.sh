@@ -26,7 +26,7 @@ upload() {
       ;;
     s3)
       # Actual upload
-      mc -q cp tests/random_data_file_$2 $S3_PATH/
+      mc -q cp tests/random_data_file_$2 $S3_PATH/ > /dev/null
       # Getting download link
       UPLOAD="mc share download --expire 2h $S3_PATH/random_data_file_${2} | grep Share | sed 's/.*\/\/[^\/]*\///'"
       ;;
