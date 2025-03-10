@@ -96,3 +96,7 @@ Considerations when obtaining pricing datat
 - [ ] Mention Future Discounting of Confidence in Guarantees (FDCG).
 - [ ] Use Arweave as example
 - [ ] Do a regression
+- [ ] Write up regression methodology for "effective storage horizon" (repeatably)
+- [ ] Put ESH in the table
+- [ ] Comment on limitations and next steps for ESH methodology (e.g. weighting services, additional factors such as performance or risks).
+
