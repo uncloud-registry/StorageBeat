@@ -17,15 +17,22 @@ rm -f tests/current_payload_${TARGET}.csv
 # $1 is target, $2 is random file id
 upload() {
   case $1 in
-  swarm)
-    STAMP=$(swarm-cli stamp list --least-used --limit 1 --quiet --hide-usage)
-    UPLOAD="swarm-cli upload tests/random_data_file_${2} --stamp $STAMP | awk '/hash/ {print \$3}'"
-    ;;
-  arweave)
-    UPLOAD="ardrive upload-file --local-path tests/random_data_file_${2} -F $ARDRIVE_WALLE -w $ARDRIVE_WALLET --turbo | jq -r '.created[0].dataTxId'"
-    ;;
-  dryrun)
-    UPLOAD="echo $1, file random_data_file_${2}"
+    swarm)
+      STAMP=$(swarm-cli stamp list --least-used --limit 1 --quiet --hide-usage)
+      UPLOAD="swarm-cli upload tests/random_data_file_${2} --stamp $STAMP | awk '/hash/ {print \$3}'"
+      ;;
+    arweave)
+      UPLOAD="ardrive upload-file --local-path tests/random_data_file_${2} -F $ARDRIVE_WALLE -w $ARDRIVE_WALLET --turbo | jq -r '.created[0].dataTxId'"
+      ;;
+    s3)
+      # Actual upload
+      mc -q cp tests/random_data_file_$2 $S3_PATH/
+      # Getting download link
+      UPLOAD="mc share download --expire 2h $S3_PATH/random_data_file_${2} | grep Share | sed 's/.*\/\/[^\/]*\///'"
+      ;;
+    *)
+      UPLOAD="echo $1, file random_data_file_${2}"
+      ;;
   esac
 
   eval "$UPLOAD"
