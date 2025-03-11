@@ -3,7 +3,7 @@ Description=Upload random data to Swarm and run download test
 
 [Service]
 WorkingDirectory=WORKDIR
-ExecStart=~/uploadAndTest.sh
+ExecStart=~/uploadAndTest.sh TARGET
 Restart=on-failure
 RestartSec=10s
 StartLimitInterval=5min
