@@ -26,7 +26,7 @@ upload() {
       UPLOAD="swarm-cli upload tests/random_data_file_${2} --stamp $STAMP | awk '/hash/ {print \$3}'"
       ;;
     arweave)
-      UPLOAD="ardrive upload-file --local-path tests/random_data_file_${2} -F $ARDRIVE_WALLE -w $ARDRIVE_WALLET --turbo | jq -r '.created[0].dataTxId'"
+      UPLOAD="ardrive upload-file --local-path tests/random_data_file_${2} -F $ARDRIVE_FOLDER -w $ARDRIVE_WALLET --turbo | jq -r '.created[0].dataTxId'"
       ;;
     s3)
       # Actual upload
