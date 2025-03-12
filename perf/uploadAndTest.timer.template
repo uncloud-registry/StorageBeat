@@ -3,7 +3,7 @@ Description="Run Swarm upload and test daily"
 
 [Timer]
 OnCalendar=*-*-* 12:00:00
-Unit=uploadAndTest.service
+Unit=uploadAndTest_PARAMS.service
 Persistent=true
 
 [Install]
