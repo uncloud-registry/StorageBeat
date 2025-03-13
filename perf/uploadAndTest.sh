@@ -1,10 +1,10 @@
 #!/bin/bash
 
-if [ "$#" -gt 0 ]; then
-  TARGET=$1
-else
-  TARGET=dryrun
-fi
+TARGET="${1:-dryrun}"
+FILENUM="${2:-2}"
+FILESIZE="${3:-99}"
+[[ ${4} != M ]] && SIZEUNIT=K || SIZEUNIT=M
+BMARK=${TARGET}_${FILESIZE}${SIZEUNIT}
 
 . upload_env.sh
 
@@ -42,18 +42,18 @@ upload() {
   eval "$UPLOAD"
 }
 
-for i in {1..2}; do
-  dd if=/dev/urandom of=tests/random_data_file bs=1K count=99
+for ((i=1; i<=FILENUM; i++)); do
+  dd if=/dev/urandom of=tests/random_data_file bs=1${SIZEUNIT} count=${FILESIZE}
   #get fileid from first alpha numeric symbols in generated file
   FILEID=$(tr -dc A-Za-z0-9 < tests/random_data_file | head -c 13)
   cp tests/random_data_file tests/random_data_file_${FILEID}
-  upload $TARGET $FILEID >> tests/current_payload_${TARGET}.csv
+  upload $TARGET $FILEID >> tests/current_payload_${BMARK}.csv
 done
 
-cp tests/current_payload_${TARGET}.csv tests/payload_${TARGET}_${TIMESTAMP}.csv
+cp tests/current_payload_${BMARK}.csv tests/payload_${BMARK}_${TIMESTAMP}.csv
 
 if [ $TARGET != "dryrun" ]; then
-  systemd-run --user --on-active=60 -d artillery run -o tests/${TIMESTAMP}_${TARGET}_test.json -q -e $TARGET -v '{"payload":"tests/current_payload_'${TARGET}'.csv"}' $TESTSCRIPT 
+  systemd-run --user --on-active=60 -d artillery run -o tests/report_${BMARK}_${TIMESTAMP}.json -q -e $TARGET -v '{"payload":"tests/current_payload_'${BMARK}'.csv"}' $TESTSCRIPT 
 else
-  echo artillery run -o tests/${TIMESTAMP}_${TARGET}_test.json -q -e $TARGET -v '{"payload":"tests/current_payload_'${TARGET}'.csv"}' $TESTSCRIPT
+  echo artillery run -o tests/report_${BMARK}_${TIMESTAMP}.json -q -e $TARGET -v '{"payload":"tests/current_payload_'${BMARK}'.csv"}' $TESTSCRIPT
 fi
