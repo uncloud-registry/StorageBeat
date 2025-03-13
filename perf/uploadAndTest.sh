@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -- ${@}
+
 TARGET="${1:-dryrun}"
 FILENUM="${2:-2}"
 FILESIZE="${3:-99}"
