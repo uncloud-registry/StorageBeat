@@ -15,7 +15,7 @@
 - [x] Establish experimental design + commit.
 - [ ] Implement benchmark suite. @eshavkun
 - [x] Select target services + commit.
-- [ ] Obtain quotas + access and share. (How?)
+- [x] Obtain quotas + access and share.
 - [ ] Run benchmarks. (Where should we save outputs?)
 
 ## Design rationale

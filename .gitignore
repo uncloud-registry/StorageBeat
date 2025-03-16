@@ -1,1 +1,6 @@
 www/out
+.env
+proof_bytes.txt
+
+perf/tests/*
+perf/upload_env.sh
