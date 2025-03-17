@@ -1,7 +1,5 @@
 #!/bin/bash
 
-BEE_URL=http://localhost:1633
-
 set -- ${@}
 
 TARGET="${1:-dryrun}"
@@ -11,6 +9,8 @@ FILESIZE="${3:-99}"
 BMARK=${TARGET}_${FILESIZE}${SIZEUNIT}
 
 . upload_env.sh
+
+BEE_URL="${BEE_URL:-http://localhost:1633}"
 
 TESTSCRIPT=StorageBeat.yml
 TIMESTAMP=$(date +%s)
