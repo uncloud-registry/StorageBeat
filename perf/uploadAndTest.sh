@@ -1,5 +1,7 @@
 #!/bin/bash
 
+BEE_URL=http://localhost:1633
+
 set -- ${@}
 
 TARGET="${1:-dryrun}"
@@ -20,12 +22,12 @@ rm -f tests/current_payload_${TARGET}.csv
 upload() {
   case $1 in
     swarm)
-      STAMP=$(swarm-cli stamp list --least-used --limit 1 --quiet --hide-usage)
+      STAMP=$(swarm-cli stamp list --least-used --limit 1 --quiet --hide-usage -bee-api-url $BEE_URL)
       if [[ -z "${STAMP}" ]]; then
         echo "You do not have any stamps."
         exit 1
       fi
-      UPLOAD="swarm-cli upload tests/random_data_file_${2} --stamp $STAMP | awk '/hash/ {print \$3}'"
+      UPLOAD="swarm-cli upload tests/random_data_file_${2} --stamp $STAMP --bee-api-url $BEE_URL | awk '/hash/ {print \$3}'"
       ;;
     arweave)
       UPLOAD="ardrive upload-file --local-path tests/random_data_file_${2} -F $ARDRIVE_FOLDER -w $ARDRIVE_WALLET --turbo | jq -r '.created[0].dataTxId'"
@@ -55,7 +57,7 @@ done
 cp tests/current_payload_${BMARK}.csv tests/payload_${BMARK}_${TIMESTAMP}.csv
 
 if [ $TARGET != "dryrun" ]; then
-  systemd-run --user --on-active=60 -d artillery run -o tests/report_${BMARK}_${TIMESTAMP}.json -q -e $TARGET -v '{"payload":"tests/current_payload_'${BMARK}'.csv"}' $TESTSCRIPT 
+  systemd-run --user --on-active=600 -d artillery run -o tests/report_${BMARK}_${TIMESTAMP}.json -q -e $TARGET -v '{"payload":"tests/current_payload_'${BMARK}'.csv"}' $TESTSCRIPT 
 else
   echo artillery run -o tests/report_${BMARK}_${TIMESTAMP}.json -q -e $TARGET -v '{"payload":"tests/current_payload_'${BMARK}'.csv"}' $TESTSCRIPT
 fi
