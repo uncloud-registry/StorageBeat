@@ -1,5 +1,5 @@
 [Unit]
-Description="Run Swarm upload and test daily"
+Description="Run upload and benchmark daily"
 
 [Timer]
 OnCalendar=*-*-* 12:00:00

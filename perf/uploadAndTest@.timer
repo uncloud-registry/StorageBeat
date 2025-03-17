@@ -1,0 +1,10 @@
+[Unit]
+Description="Upload files and run benchmark: %I"
+
+[Timer]
+OnCalendar=hourly
+Unit=uploadAndTest@%i.service
+Persistent=true
+
+[Install]
+WantedBy=default.target
