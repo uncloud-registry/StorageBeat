@@ -38,6 +38,9 @@ upload() {
       # Getting download link
       UPLOAD="mc share download --expire 2h $S3_PATH/random_data_file_${2} | grep Share | sed 's/.*\/\/[^\/]*\///'"
       ;;
+    ipfs)
+      UPLOAD="pinata upload tests/random_data_file_${2} | jq -r '.cid'"
+      ;;
     *)
       UPLOAD="echo $1, file random_data_file_${2}"
       ;;
