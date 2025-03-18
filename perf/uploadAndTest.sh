@@ -16,13 +16,13 @@ TESTSCRIPT=StorageBeat.yml
 TIMESTAMP=$(date +%s)
 
 mkdir -p tests
-rm -f tests/current_payload_${TARGET}.csv
+rm -f tests/current_payload_${BMARK}.csv
 
 # $1 is target, $2 is random file id
 upload() {
   case $1 in
     swarm)
-      STAMP=$(swarm-cli stamp list --least-used --limit 1 --quiet --hide-usage -bee-api-url $BEE_URL)
+      STAMP=$(swarm-cli stamp list --least-used --limit 1 --quiet --hide-usage --bee-api-url $BEE_URL)
       if [[ -z "${STAMP}" ]]; then
         echo "You do not have any stamps."
         exit 1
