@@ -55,6 +55,7 @@ for ((i=1; i<=FILENUM; i++)); do
   FILEID=$(tr -dc A-Za-z0-9 < tests/random_data_file | head -c 13)
   cp tests/random_data_file tests/random_data_file_${FILEID}
   upload $TARGET $FILEID >> tests/current_payload_${BMARK}.csv
+  rm tests/random_data_file_${FILEID}
 done
 
 cp tests/current_payload_${BMARK}.csv tests/payload_${BMARK}_${TIMESTAMP}.csv
