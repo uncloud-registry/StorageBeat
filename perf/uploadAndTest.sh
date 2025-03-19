@@ -60,7 +60,7 @@ done
 cp tests/current_payload_${BMARK}.csv tests/payload_${BMARK}_${TIMESTAMP}.csv
 
 if [ $TARGET != "dryrun" ]; then
-  systemd-run --user --on-active=600 -d artillery run -o tests/report_${BMARK}_${TIMESTAMP}.json -q -e $TARGET -v '{"payload":"tests/current_payload_'${BMARK}'.csv"}' $TESTSCRIPT 
+  systemd-run --user --on-active=600 -d artillery run -o tests/report_${BMARK}_${TIMESTAMP}.json -q -e $TARGET -v '{"payload":"tests/current_payload_'${BMARK}'.csv"}' --overrides '{"config":{"phases":[{"duration":'${FILENUM}',"arrivalRate":1}]}}' $TESTSCRIPT 
 else
-  echo artillery run -o tests/report_${BMARK}_${TIMESTAMP}.json -q -e $TARGET -v '{"payload":"tests/current_payload_'${BMARK}'.csv"}' $TESTSCRIPT
+  echo artillery run -o tests/report_${BMARK}_${TIMESTAMP}.json -q -e $TARGET -v '{"payload":"tests/current_payload_'${BMARK}'.csv"}' --overrides '{"config":{"phases":[{"duration":'${FILENUM}',"arrivalRate":1}]}}' $TESTSCRIPT
 fi
