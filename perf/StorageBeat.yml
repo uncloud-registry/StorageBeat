@@ -43,16 +43,12 @@ config:
       metrics-by-endpoint:
         useOnlyRequestNames: true
 scenarios:
-  - name: "Existing file"
-    weight: 1
+  - name: "Download file"
     flow:
       - log: '{{ existing }}'
       - get:
           url: '/{{existing}}'
           name: "Existing file"
-  - name: "Non existing file"
-    weight: 1
-    flow:
       - get:
           url: '/{{nonExisting}}'
           name: "Non existing file"
