@@ -1,0 +1,1428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<office:document xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.spreadsheet">
+ <office:meta><meta:creation-date>2024-11-20T06:45:40.890211939</meta:creation-date><dc:date>2024-11-21T12:41:20.020559412</dc:date><meta:editing-duration>PT5H7M5S</meta:editing-duration><meta:editing-cycles>2</meta:editing-cycles><meta:generator>LibreOffice/7.3.2.2$MacOSX_X86_64 LibreOffice_project/49f2b1bff42cfccbd8f788c8dc32c1c309559be0</meta:generator><meta:document-statistic meta:table-count="2" meta:cell-count="283" meta:object-count="0"/></office:meta>
+ <office:settings>
+  <config:config-item-set config:name="ooo:view-settings">
+   <config:config-item config:name="VisibleAreaTop" config:type="int">0</config:config-item>
+   <config:config-item config:name="VisibleAreaLeft" config:type="int">0</config:config-item>
+   <config:config-item config:name="VisibleAreaWidth" config:type="int">106872</config:config-item>
+   <config:config-item config:name="VisibleAreaHeight" config:type="int">20320</config:config-item>
+   <config:config-item-map-indexed config:name="Views">
+    <config:config-item-map-entry>
+     <config:config-item config:name="ViewId" config:type="string">view1</config:config-item>
+     <config:config-item-map-named config:name="Tables">
+      <config:config-item-map-entry config:name="Customer View">
+       <config:config-item config:name="CursorPositionX" config:type="int">2</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">22</config:config-item>
+       <config:config-item config:name="ActiveSplitRange" config:type="short">2</config:config-item>
+       <config:config-item config:name="PositionLeft" config:type="int">0</config:config-item>
+       <config:config-item config:name="PositionRight" config:type="int">0</config:config-item>
+       <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
+       <config:config-item config:name="PositionBottom" config:type="int">0</config:config-item>
+       <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
+       <config:config-item config:name="ZoomValue" config:type="int">65</config:config-item>
+       <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
+       <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
+       <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
+      </config:config-item-map-entry>
+      <config:config-item-map-entry config:name="Node Operations">
+       <config:config-item config:name="CursorPositionX" config:type="int">12</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">32</config:config-item>
+       <config:config-item config:name="ActiveSplitRange" config:type="short">2</config:config-item>
+       <config:config-item config:name="PositionLeft" config:type="int">4</config:config-item>
+       <config:config-item config:name="PositionRight" config:type="int">0</config:config-item>
+       <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
+       <config:config-item config:name="PositionBottom" config:type="int">0</config:config-item>
+       <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
+       <config:config-item config:name="ZoomValue" config:type="int">65</config:config-item>
+       <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
+       <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
+       <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
+      </config:config-item-map-entry>
+     </config:config-item-map-named>
+     <config:config-item config:name="ActiveTable" config:type="string">Customer View</config:config-item>
+     <config:config-item config:name="HorizontalScrollbarWidth" config:type="int">1560</config:config-item>
+     <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
+     <config:config-item config:name="ZoomValue" config:type="int">65</config:config-item>
+     <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
+     <config:config-item config:name="ShowPageBreakPreview" config:type="boolean">false</config:config-item>
+     <config:config-item config:name="ShowZeroValues" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="ShowNotes" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="GridColor" config:type="int">12632256</config:config-item>
+     <config:config-item config:name="ShowPageBreaks" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="HasColumnRowHeaders" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="HasSheetTabs" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="IsOutlineSymbolsSet" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="IsValueHighlightingEnabled" config:type="boolean">false</config:config-item>
+     <config:config-item config:name="IsSnapToRaster" config:type="boolean">false</config:config-item>
+     <config:config-item config:name="RasterIsVisible" config:type="boolean">false</config:config-item>
+     <config:config-item config:name="RasterResolutionX" config:type="int">1270</config:config-item>
+     <config:config-item config:name="RasterResolutionY" config:type="int">1270</config:config-item>
+     <config:config-item config:name="RasterSubdivisionX" config:type="int">1</config:config-item>
+     <config:config-item config:name="RasterSubdivisionY" config:type="int">1</config:config-item>
+     <config:config-item config:name="IsRasterAxisSynchronized" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
+    </config:config-item-map-entry>
+   </config:config-item-map-indexed>
+  </config:config-item-set>
+  <config:config-item-set config:name="ooo:configuration-settings">
+   <config:config-item config:name="AllowPrintJobCancel" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="ApplyUserData" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="AutoCalculate" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="CharacterCompressionType" config:type="short">0</config:config-item>
+   <config:config-item config:name="EmbedAsianScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedComplexScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedFonts" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="EmbedLatinScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedOnlyUsedFonts" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="GridColor" config:type="int">12632256</config:config-item>
+   <config:config-item config:name="HasColumnRowHeaders" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="HasSheetTabs" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsDocumentShared" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsKernAsianPunctuation" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsOutlineSymbolsSet" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsRasterAxisSynchronized" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsSnapToRaster" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="LinkUpdateMode" config:type="short">3</config:config-item>
+   <config:config-item config:name="LoadReadonly" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrinterName" config:type="string">HP Smart Tank 510 series</config:config-item>
+   <config:config-item config:name="PrinterPaperFromSetup" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrinterSetup" config:type="base64Binary">5wD+/0hQIFNtYXJ0IFRhbmsgNTEwIHNlcmllcwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASFAgU21hcnQgVGFuayA1MTAgc2VyaWVzLUFpclByaQAWAAQABAAAAAAAAAAEAAhSAAAEdAAAAAAAABIAQ09NUEFUX0RVUExFWF9NT0RFEwBEdXBsZXhNb2RlOjpVbmtub3du</config:config-item>
+   <config:config-item config:name="RasterIsVisible" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="RasterResolutionX" config:type="int">1270</config:config-item>
+   <config:config-item config:name="RasterResolutionY" config:type="int">1270</config:config-item>
+   <config:config-item config:name="RasterSubdivisionX" config:type="int">1</config:config-item>
+   <config:config-item config:name="RasterSubdivisionY" config:type="int">1</config:config-item>
+   <config:config-item config:name="SaveThumbnail" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="SaveVersionOnClose" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="ShowNotes" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="ShowPageBreaks" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="ShowZeroValues" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="SyntaxStringRef" config:type="short">7</config:config-item>
+   <config:config-item config:name="UpdateFromTemplate" config:type="boolean">true</config:config-item>
+   <config:config-item-map-named config:name="ScriptConfiguration">
+    <config:config-item-map-entry config:name="Customer View">
+     <config:config-item config:name="CodeName" config:type="string">Sheet1</config:config-item>
+    </config:config-item-map-entry>
+    <config:config-item-map-entry config:name="Node Operations">
+     <config:config-item config:name="CodeName" config:type="string">Node Operations</config:config-item>
+    </config:config-item-map-entry>
+   </config:config-item-map-named>
+  </config:config-item-set>
+ </office:settings>
+ <office:scripts>
+  <office:script script:language="ooo:Basic">
+   <ooo:libraries xmlns:ooo="http://openoffice.org/2004/office" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+  </office:script>
+ </office:scripts>
+ <office:font-face-decls>
+  <style:font-face style:name="Arial Unicode MS" svg:font-family="&apos;Arial Unicode MS&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
+  <style:font-face style:name="DejaVu Sans" svg:font-family="&apos;DejaVu Sans&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
+  <style:font-face style:name="FreeSans" svg:font-family="FreeSans" style:font-family-generic="system" style:font-pitch="variable"/>
+  <style:font-face style:name="Liberation Sans" svg:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="swiss" style:font-pitch="variable"/>
+  <style:font-face style:name="Liberation Serif" svg:font-family="&apos;Liberation Serif&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
+  <style:font-face style:name="Noto Sans CJK SC" svg:font-family="&apos;Noto Sans CJK SC&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
+  <style:font-face style:name="PingFang SC" svg:font-family="&apos;PingFang SC&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
+ </office:font-face-decls>
+ <office:styles>
+  <style:default-style style:family="table-cell">
+   <style:paragraph-properties style:tab-stop-distance="0.5in"/>
+   <style:text-properties style:font-name="Liberation Sans" fo:font-size="10pt" fo:language="en" fo:country="US" style:font-name-asian="Noto Sans CJK SC" style:font-size-asian="10pt" style:language-asian="zh" style:country-asian="CN" style:font-name-complex="FreeSans" style:font-size-complex="10pt" style:language-complex="hi" style:country-complex="IN"/>
+  </style:default-style>
+  <number:number-style style:name="N0">
+   <number:number number:min-integer-digits="1"/>
+  </number:number-style>
+  <number:number-style style:name="N121">
+   <number:number number:decimal-places="5" number:min-decimal-places="5" number:min-integer-digits="1"/>
+  </number:number-style>
+  <style:style style:name="Default" style:family="table-cell"/>
+  <style:style style:name="Heading" style:family="table-cell" style:parent-style-name="Default">
+   <style:table-cell-properties fo:wrap-option="no-wrap" style:shrink-to-fit="false"/>
+   <style:text-properties fo:font-size="24pt" fo:font-style="normal" fo:font-weight="bold" style:font-size-asian="24pt" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-size-complex="24pt" style:font-style-complex="normal" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="Heading_20_1" style:display-name="Heading 1" style:family="table-cell" style:parent-style-name="Heading">
+   <style:table-cell-properties fo:wrap-option="no-wrap" style:shrink-to-fit="false"/>
+   <style:text-properties fo:font-size="18pt" style:font-size-asian="18pt" style:font-size-complex="18pt"/>
+  </style:style>
+  <style:style style:name="Heading_20_2" style:display-name="Heading 2" style:family="table-cell" style:parent-style-name="Heading">
+   <style:table-cell-properties fo:wrap-option="no-wrap" style:shrink-to-fit="false"/>
+   <style:text-properties fo:font-size="12pt" style:font-size-asian="12pt" style:font-size-complex="12pt"/>
+  </style:style>
+  <style:style style:name="Text" style:family="table-cell" style:parent-style-name="Default">
+   <style:table-cell-properties fo:wrap-option="no-wrap" style:shrink-to-fit="false"/>
+  </style:style>
+  <style:style style:name="Note" style:family="table-cell" style:parent-style-name="Text">
+   <style:table-cell-properties fo:background-color="#ffffcc" style:diagonal-bl-tr="none" style:diagonal-tl-br="none" fo:wrap-option="no-wrap" fo:border="0.74pt solid #808080" style:shrink-to-fit="false"/>
+   <style:text-properties fo:color="#333333"/>
+  </style:style>
+  <style:style style:name="Footnote" style:family="table-cell" style:parent-style-name="Text">
+   <style:table-cell-properties fo:wrap-option="no-wrap" style:shrink-to-fit="false"/>
+   <style:text-properties fo:color="#808080" fo:font-style="italic" style:font-style-asian="italic" style:font-style-complex="italic"/>
+  </style:style>
+  <style:style style:name="Hyperlink" style:family="table-cell" style:parent-style-name="Text">
+   <style:table-cell-properties fo:wrap-option="no-wrap" style:shrink-to-fit="false"/>
+   <style:text-properties fo:color="#0000ee" style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="#0000ee"/>
+  </style:style>
+  <style:style style:name="Status" style:family="table-cell" style:parent-style-name="Default">
+   <style:table-cell-properties fo:wrap-option="no-wrap" style:shrink-to-fit="false"/>
+  </style:style>
+  <style:style style:name="Good" style:family="table-cell" style:parent-style-name="Status">
+   <style:table-cell-properties fo:background-color="#ccffcc" fo:wrap-option="no-wrap" style:shrink-to-fit="false"/>
+   <style:text-properties fo:color="#006600"/>
+  </style:style>
+  <style:style style:name="Neutral" style:family="table-cell" style:parent-style-name="Status">
+   <style:table-cell-properties fo:background-color="#ffffcc" fo:wrap-option="no-wrap" style:shrink-to-fit="false"/>
+   <style:text-properties fo:color="#996600"/>
+  </style:style>
+  <style:style style:name="Bad" style:family="table-cell" style:parent-style-name="Status">
+   <style:table-cell-properties fo:background-color="#ffcccc" fo:wrap-option="no-wrap" style:shrink-to-fit="false"/>
+   <style:text-properties fo:color="#cc0000"/>
+  </style:style>
+  <style:style style:name="Warning" style:family="table-cell" style:parent-style-name="Status">
+   <style:table-cell-properties fo:wrap-option="no-wrap" style:shrink-to-fit="false"/>
+   <style:text-properties fo:color="#cc0000"/>
+  </style:style>
+  <style:style style:name="Error" style:family="table-cell" style:parent-style-name="Status">
+   <style:table-cell-properties fo:background-color="#cc0000" fo:wrap-option="no-wrap" style:shrink-to-fit="false"/>
+   <style:text-properties fo:color="#ffffff" fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="Accent" style:family="table-cell" style:parent-style-name="Default">
+   <style:table-cell-properties fo:wrap-option="no-wrap" style:shrink-to-fit="false"/>
+   <style:text-properties fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="Accent_20_1" style:display-name="Accent 1" style:family="table-cell" style:parent-style-name="Accent">
+   <style:table-cell-properties fo:background-color="#000000" fo:wrap-option="no-wrap" style:shrink-to-fit="false"/>
+   <style:text-properties fo:color="#ffffff"/>
+  </style:style>
+  <style:style style:name="Accent_20_2" style:display-name="Accent 2" style:family="table-cell" style:parent-style-name="Accent">
+   <style:table-cell-properties fo:background-color="#808080" fo:wrap-option="no-wrap" style:shrink-to-fit="false"/>
+   <style:text-properties fo:color="#ffffff"/>
+  </style:style>
+  <style:style style:name="Accent_20_3" style:display-name="Accent 3" style:family="table-cell" style:parent-style-name="Accent">
+   <style:table-cell-properties fo:background-color="#dddddd" fo:wrap-option="no-wrap" style:shrink-to-fit="false"/>
+  </style:style>
+  <style:style style:name="Result" style:family="table-cell" style:parent-style-name="Default">
+   <style:table-cell-properties fo:wrap-option="no-wrap" style:shrink-to-fit="false"/>
+   <style:text-properties fo:font-style="italic" style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color" fo:font-weight="bold" style:font-style-asian="italic" style:font-weight-asian="bold" style:font-style-complex="italic" style:font-weight-complex="bold"/>
+  </style:style>
+  <draw:marker draw:name="Arrowheads_20_1" draw:display-name="Arrowheads 1" svg:viewBox="0 0 20 30" svg:d="M10 0l-10 30h20z"/>
+ </office:styles>
+ <office:automatic-styles>
+  <style:style style:name="co1" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.6472in"/>
+  </style:style>
+  <style:style style:name="co2" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.5783in"/>
+  </style:style>
+  <style:style style:name="co3" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.4189in"/>
+  </style:style>
+  <style:style style:name="co4" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.0571in"/>
+  </style:style>
+  <style:style style:name="co5" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="0.889in"/>
+  </style:style>
+  <style:style style:name="co6" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.2673in"/>
+  </style:style>
+  <style:style style:name="co7" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.5047in"/>
+  </style:style>
+  <style:style style:name="co8" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.0409in"/>
+  </style:style>
+  <style:style style:name="co9" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.389in"/>
+  </style:style>
+  <style:style style:name="co10" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.0291in"/>
+  </style:style>
+  <style:style style:name="co11" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.2661in"/>
+  </style:style>
+  <style:style style:name="co12" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.3252in"/>
+  </style:style>
+  <style:style style:name="co13" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.072in"/>
+  </style:style>
+  <style:style style:name="co14" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.061in"/>
+  </style:style>
+  <style:style style:name="co15" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.2161in"/>
+  </style:style>
+  <style:style style:name="co16" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.4902in"/>
+  </style:style>
+  <style:style style:name="co17" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.7583in"/>
+  </style:style>
+  <style:style style:name="co18" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.2654in"/>
+  </style:style>
+  <style:style style:name="ro1" style:family="table-row">
+   <style:table-row-properties style:row-height="0.178in" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ta1" style:family="table" style:master-page-name="Default">
+   <style:table-properties table:display="true" style:writing-mode="lr-tb"/>
+  </style:style>
+  <number:number-style style:name="N2">
+   <number:number number:decimal-places="2" number:min-decimal-places="2" number:min-integer-digits="1"/>
+  </number:number-style>
+  <number:percentage-style style:name="N11">
+   <number:number number:decimal-places="2" number:min-decimal-places="2" number:min-integer-digits="1"/>
+   <number:text>%</number:text>
+  </number:percentage-style>
+  <style:style style:name="ce10" style:family="table-cell" style:parent-style-name="Default">
+   <style:text-properties fo:color="#ff8000"/>
+  </style:style>
+  <style:style style:name="ce11" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N121"/>
+  <style:style style:name="ce12" style:family="table-cell" style:parent-style-name="Default">
+   <style:text-properties fo:color="#ff8000" style:font-name="Liberation Serif" style:font-name-asian="DejaVu Sans" style:font-name-complex="DejaVu Sans"/>
+  </style:style>
+  <style:style style:name="ce13" style:family="table-cell" style:parent-style-name="Default">
+   <style:text-properties style:font-name="Liberation Serif" style:font-name-asian="DejaVu Sans" style:font-name-complex="DejaVu Sans"/>
+  </style:style>
+  <style:style style:name="ce14" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N11">
+   <style:text-properties fo:color="#ff8000"/>
+  </style:style>
+  <style:style style:name="ce6" style:family="table-cell" style:parent-style-name="Default">
+   <style:text-properties fo:color="#ff8000"/>
+  </style:style>
+  <style:style style:name="ce7" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N121"/>
+  <style:style style:name="ce8" style:family="table-cell" style:parent-style-name="Default">
+   <style:text-properties fo:color="#ff8000" style:font-name="Liberation Serif" style:font-name-asian="DejaVu Sans" style:font-name-complex="DejaVu Sans"/>
+  </style:style>
+  <style:style style:name="ce9" style:family="table-cell" style:parent-style-name="Default">
+   <style:text-properties style:font-name="Liberation Serif" style:font-name-asian="DejaVu Sans" style:font-name-complex="DejaVu Sans"/>
+  </style:style>
+  <style:style style:name="ce15" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N11">
+   <style:text-properties fo:color="#ff8000"/>
+  </style:style>
+  <style:page-layout style:name="pm1">
+   <style:page-layout-properties style:writing-mode="lr-tb"/>
+   <style:header-style>
+    <style:header-footer-properties fo:min-height="0.2953in" fo:margin-left="0in" fo:margin-right="0in" fo:margin-bottom="0.0984in"/>
+   </style:header-style>
+   <style:footer-style>
+    <style:header-footer-properties fo:min-height="0.2953in" fo:margin-left="0in" fo:margin-right="0in" fo:margin-top="0.0984in"/>
+   </style:footer-style>
+  </style:page-layout>
+  <style:page-layout style:name="pm2">
+   <style:page-layout-properties style:writing-mode="lr-tb"/>
+   <style:header-style>
+    <style:header-footer-properties fo:min-height="0.2953in" fo:margin-left="0in" fo:margin-right="0in" fo:margin-bottom="0.0984in" fo:border="1.5pt solid #000000" fo:padding="0.0071in" fo:background-color="#c0c0c0">
+     <style:background-image/>
+    </style:header-footer-properties>
+   </style:header-style>
+   <style:footer-style>
+    <style:header-footer-properties fo:min-height="0.2953in" fo:margin-left="0in" fo:margin-right="0in" fo:margin-top="0.0984in" fo:border="1.5pt solid #000000" fo:padding="0.0071in" fo:background-color="#c0c0c0">
+     <style:background-image/>
+    </style:header-footer-properties>
+   </style:footer-style>
+  </style:page-layout>
+ </office:automatic-styles>
+ <office:master-styles>
+  <style:master-page style:name="Default" style:page-layout-name="pm1">
+   <style:header>
+    <text:p><text:sheet-name>???</text:sheet-name></text:p>
+   </style:header>
+   <style:header-left style:display="false"/>
+   <style:header-first style:display="false"/>
+   <style:footer>
+    <text:p>Page <text:page-number>1</text:page-number></text:p>
+   </style:footer>
+   <style:footer-left style:display="false"/>
+   <style:footer-first style:display="false"/>
+  </style:master-page>
+  <style:master-page style:name="Report" style:page-layout-name="pm2">
+   <style:header>
+    <style:region-left>
+     <text:p><text:sheet-name>???</text:sheet-name><text:s/>(<text:title>???</text:title>)</text:p>
+    </style:region-left>
+    <style:region-right>
+     <text:p><text:date style:data-style-name="N2" text:date-value="2025-03-17">00/00/0000</text:date>, <text:time style:data-style-name="N2" text:time-value="16:47:52.805175641">00:00:00</text:time></text:p>
+    </style:region-right>
+   </style:header>
+   <style:header-left style:display="false"/>
+   <style:header-first style:display="false"/>
+   <style:footer>
+    <text:p>Page <text:page-number>1</text:page-number><text:s/>/ <text:page-count>99</text:page-count></text:p>
+   </style:footer>
+   <style:footer-left style:display="false"/>
+   <style:footer-first style:display="false"/>
+  </style:master-page>
+ </office:master-styles>
+ <office:body>
+  <office:spreadsheet>
+   <table:calculation-settings table:automatic-find-labels="false" table:use-regular-expressions="false" table:use-wildcards="true"/>
+   <table:table table:name="Customer View" table:style-name="ta1">
+    <table:table-column table:style-name="co1" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co2" table:default-cell-style-name="ce7"/>
+    <table:table-column table:style-name="co3" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co4" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co5" table:number-columns-repeated="3" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co6" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co7" table:number-columns-repeated="3" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co6" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co5" table:number-columns-repeated="3" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co8" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co5" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co9" table:number-columns-repeated="2" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co10" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co11" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co2" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co12" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co5" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co13" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co14" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co15" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co16" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co17" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co5" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co18" table:default-cell-style-name="Default"/>
+    <table:table-column table:style-name="co5" table:number-columns-repeated="993" table:default-cell-style-name="Default"/>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Service</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="string" calcext:value-type="string">
+      <text:p>StateRent: $/GB-mo</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>StateRent: month</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>StateRent: GB</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>StateRent:$</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Subsidy(GB)</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Category</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Verification</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>NumNodes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>NetworkCapacity(GB)</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>ConsensusTakeover</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Protocol</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>C/D</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>UtilityChain(s)</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Chaintype</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>UtilityToken</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Chain</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Governence Token</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Notes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Friction to Eth</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Gaurentee Type</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Egrees: $/Gbmo</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Typical Disk</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Archival Media</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Retr Latency</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Retr Speed</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Censorship Resitance</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Darkness (Subpoenable?)</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>URL</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>DevOps Complexity</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fixed Erasure</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Proof Types</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>ASIC</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>GPU</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>CPU</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="988"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Wesendit-business</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E2]/([.D2]*[.C2])" office:value-type="float" office:value="0.0015" calcext:value-type="float">
+      <text:p>0.00150</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="12" calcext:value-type="float">
+      <text:p>12</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="5000" calcext:value-type="float">
+      <text:p>5000</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="90" calcext:value-type="float">
+      <text:p>90</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Swarm</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E3]/([.D3]*[.C3])" office:value-type="float" office:value="0.00164395" calcext:value-type="float">
+      <text:p>0.00164</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="0.00164395" calcext:value-type="float">
+      <text:p>0.00164395</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>libp2p, DHT</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>CR-Vote</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Libp2p-extension</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>decentralised</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Gnosis</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>BZZ</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Ethereum</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1007"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Storj</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E4]/([.D4]*[.C4])" office:value-type="float" office:value="0.004" calcext:value-type="float">
+      <text:p>0.00400</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="0.004" calcext:value-type="float">
+      <text:p>0.004</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="7"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>semi</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>STORJ</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1008"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Dropbox</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E5]/([.D5]*[.C5])" office:value-type="float" office:value="0.005" calcext:value-type="float">
+      <text:p>0.00500</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2000" calcext:value-type="float">
+      <text:p>2000</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="10" calcext:value-type="float">
+      <text:p>10</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="7"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>centralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1011"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Wesendit-business</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E6]/([.D6]*[.C6])" office:value-type="float" office:value="0.00598" calcext:value-type="float">
+      <text:p>0.00598</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="5000" calcext:value-type="float">
+      <text:p>5000</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="29.9" calcext:value-type="float">
+      <text:p>29.9</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Celestia-Superblobs</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E7]/([.D7]*[.C7])" office:value-type="float" office:value="0.00675" calcext:value-type="float">
+      <text:p>0.00675</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1200" calcext:value-type="float">
+      <text:p>1200</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="0.1" calcext:value-type="float">
+      <text:p>0.1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="0.81" calcext:value-type="float">
+      <text:p>0.81</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Akord-tier1</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E8]/([.D8]*[.C8])" office:value-type="float" office:value="0.0075" calcext:value-type="float">
+      <text:p>0.00750</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1200" calcext:value-type="float">
+      <text:p>1200</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="9" calcext:value-type="float">
+      <text:p>9</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Akord-tier2</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E9]/([.D9]*[.C9])" office:value-type="float" office:value="0.0075" calcext:value-type="float">
+      <text:p>0.00750</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1200" calcext:value-type="float">
+      <text:p>1200</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="9" calcext:value-type="float">
+      <text:p>9</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce6" office:value-type="string" calcext:value-type="string">
+      <text:p>Scaleway</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E10]/([.D10]*[.C10])" office:value-type="float" office:value="0.0153846153846154" calcext:value-type="float">
+      <text:p>0.01538</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" office:value-type="float" office:value="0.0013" calcext:value-type="float">
+      <text:p>0.0013</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce8" office:value-type="float" office:value="0.00002" calcext:value-type="float">
+      <text:p>0.00002</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" office:value-type="float" office:value="25" calcext:value-type="float">
+      <text:p>25</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" office:value-type="string" calcext:value-type="string">
+      <text:p>IPFS Pinning</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" table:number-columns-repeated="5"/>
+     <table:table-cell table:style-name="ce6" office:value-type="string" calcext:value-type="string">
+      <text:p>centralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" table:number-columns-repeated="12"/>
+     <table:table-cell table:number-columns-repeated="999"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Amazon S3</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E11]/([.D11]*[.C11])" office:value-type="float" office:value="0.023" calcext:value-type="float">
+      <text:p>0.02300</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="0.023" calcext:value-type="float">
+      <text:p>0.023</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Delta (SIA?)</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E12]/([.D12]*[.C12])" office:value-type="float" office:value="0.025" calcext:value-type="float">
+      <text:p>0.02500</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="0.025" calcext:value-type="float">
+      <text:p>0.025</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="7"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>unclear</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1011"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Filebase-pro</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E13]/([.D13]*[.C13])" office:value-type="float" office:value="0.025" calcext:value-type="float">
+      <text:p>0.02500</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="4000" calcext:value-type="float">
+      <text:p>4000</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Akord-tier1</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E14]/([.D14]*[.C14])" office:value-type="float" office:value="0.035" calcext:value-type="float">
+      <text:p>0.03500</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="200" calcext:value-type="float">
+      <text:p>200</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="7" calcext:value-type="float">
+      <text:p>7</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Arweave-Akord</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E15]/([.D15]*[.C15])" office:value-type="float" office:value="0.035" calcext:value-type="float">
+      <text:p>0.03500</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="200" calcext:value-type="float">
+      <text:p>200</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="7" calcext:value-type="float">
+      <text:p>7</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="7"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>decentralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Akord?</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Blocks?</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="999"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Pinata</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E16]/([.D16]*[.C16])" office:value-type="float" office:value="0.04" calcext:value-type="float">
+      <text:p>0.04000</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="500" calcext:value-type="float">
+      <text:p>500</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="20" calcext:value-type="float">
+      <text:p>20</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>IPFS Pinning</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>centralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1011"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Pinata-tier2</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E17]/([.D17]*[.C17])" office:value-type="float" office:value="0.04" calcext:value-type="float">
+      <text:p>0.04000</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2500" calcext:value-type="float">
+      <text:p>2500</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Filecoin-web3.storage</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E18]/([.D18]*[.C18])" office:value-type="float" office:value="0.05" calcext:value-type="float">
+      <text:p>0.05000</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2000" calcext:value-type="float">
+      <text:p>2000</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>CR-PoReps</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Libp2p-extension</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>decentralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>FIL</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1008"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Celestia-blobs</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E19]/([.D19]*[.C19])" office:value-type="float" office:value="0.0609166666666667" calcext:value-type="float">
+      <text:p>0.06092</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1200" calcext:value-type="float">
+      <text:p>1200</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="0.1" calcext:value-type="float">
+      <text:p>0.1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="7.31" calcext:value-type="float">
+      <text:p>7.31</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>AA</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="4"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>decentralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1011"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Infura</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E20]/([.D20]*[.C20])" office:value-type="float" office:value="0.08" calcext:value-type="float">
+      <text:p>0.08000</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="0.08" calcext:value-type="float">
+      <text:p>0.08</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>IPFS Pinning</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>centralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1011"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Akord-tier2</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E21]/([.D21]*[.C21])" office:value-type="float" office:value="0.099" calcext:value-type="float">
+      <text:p>0.09900</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1000" calcext:value-type="float">
+      <text:p>1000</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="99" calcext:value-type="float">
+      <text:p>99</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="20"/>
+     <table:table-cell table:style-name="ce6" table:number-columns-repeated="999"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Filecoin-web3.storage</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E22]/([.D22]*[.C22])" office:value-type="float" office:value="0.1" calcext:value-type="float">
+      <text:p>0.10000</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="10" calcext:value-type="float">
+      <text:p>10</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>CR-PoReps</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Libp2p-extension</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>decentralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>FIL</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="9"/>
+     <table:table-cell table:style-name="ce6" table:number-columns-repeated="999"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Ethereum Blobs</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E23]/([.D23]*[.C23])" office:value-type="string" office:string-value="" calcext:value-type="error">
+      <text:p>#VALUE!</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>E</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="0.1" calcext:value-type="float">
+      <text:p>0.1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="20.56" calcext:value-type="float">
+      <text:p>20.56</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="7"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>decentralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1011"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Scaleway-view2</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E24]/([.D24]*[.C24])" office:value-type="float" office:value="0.384615384615385" calcext:value-type="float">
+      <text:p>0.38462</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="0.0013" calcext:value-type="float">
+      <text:p>0.0013</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2000" calcext:value-type="float">
+      <text:p>2000</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce9" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>ICP</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E25]/([.D25]*[.C25])" office:value-type="float" office:value="0.445833333333333" calcext:value-type="float">
+      <text:p>0.44583</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="12" calcext:value-type="float">
+      <text:p>12</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="5.35" calcext:value-type="float">
+      <text:p>5.35</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="7"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>unclear</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>WASM + StableMem</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1005"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Wesendit-basic</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E26]/([.D26]*[.C26])" office:value-type="float" office:value="0.98" calcext:value-type="float">
+      <text:p>0.98000</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="5" calcext:value-type="float">
+      <text:p>5</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="4.9" calcext:value-type="float">
+      <text:p>4.9</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="7"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>centralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1011"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Scaleway-view2</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E27]/([.D27]*[.C27])" office:value-type="float" office:value="7.69230769230769" calcext:value-type="float">
+      <text:p>7.69231</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="0.0013" calcext:value-type="float">
+      <text:p>0.0013</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce9" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1019"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce6" office:value-type="string" calcext:value-type="string">
+      <text:p>Ethereum State</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E28]/([.D28]*[.C28])" office:value-type="float" office:value="15.5833333333333" calcext:value-type="float">
+      <text:p>15.58333</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" office:value-type="float" office:value="1200" calcext:value-type="float">
+      <text:p>1200</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" office:value-type="float" office:value="0.1" calcext:value-type="float">
+      <text:p>0.1</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" office:value-type="float" office:value="1870" calcext:value-type="float">
+      <text:p>1870</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" table:number-columns-repeated="5"/>
+     <table:table-cell table:style-name="ce15" office:value-type="percentage" office:value="0.51" calcext:value-type="percentage">
+      <text:p>51.00%</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6"/>
+     <table:table-cell table:style-name="ce6" office:value-type="string" calcext:value-type="string">
+      <text:p>decentralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" table:number-columns-repeated="12"/>
+     <table:table-cell table:number-columns-repeated="999"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce6" office:value-type="string" calcext:value-type="string">
+      <text:p>Ethereum State</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E29]/([.D29]*[.C29])" office:value-type="float" office:value="1400" calcext:value-type="float">
+      <text:p>1400.00000</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" office:value-type="float" office:value="1200" calcext:value-type="float">
+      <text:p>1200</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" office:value-type="float" office:value="1680000" calcext:value-type="float">
+      <text:p>1680000</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" table:number-columns-repeated="5"/>
+     <table:table-cell table:style-name="ce15" office:value-type="percentage" office:value="0.51" calcext:value-type="percentage">
+      <text:p>51.00%</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6"/>
+     <table:table-cell table:style-name="ce6" office:value-type="string" calcext:value-type="string">
+      <text:p>decentralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce6" table:number-columns-repeated="12"/>
+     <table:table-cell table:number-columns-repeated="999"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Arweave-RAW</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E30]/([.D30]*[.C30])" office:value-type="string" office:string-value="" calcext:value-type="error">
+      <text:p>#DIV/0!</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="9"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>decentralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Akord?</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Blocks?</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="999"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Avail</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E31]/([.D31]*[.C31])" office:value-type="string" office:string-value="" calcext:value-type="error">
+      <text:p>#DIV/0!</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="9"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>?</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Elastic Blobspace</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1005"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Codex</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E32]/([.D32]*[.C32])" office:value-type="string" office:string-value="" calcext:value-type="error">
+      <text:p>#DIV/0!</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="9"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>decentralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="12"/>
+     <table:table-cell table:style-name="ce6" table:number-columns-repeated="999"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Crust</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E33]/([.D33]*[.C33])" office:value-type="string" office:string-value="" calcext:value-type="error">
+      <text:p>#DIV/0!</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>IPFS Pinning</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Blockchain Accounting</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1067" calcext:value-type="float">
+      <text:p>1067</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="471909" calcext:value-type="float">
+      <text:p>471909</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>centralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1011"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Ethereum Blockspace</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E34]/([.D34]*[.C34])" office:value-type="string" office:string-value="" calcext:value-type="error">
+      <text:p>#DIV/0!</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="10"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>decentralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1011"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>EthStorage</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E35]/([.D35]*[.C35])" office:value-type="string" office:string-value="" calcext:value-type="error">
+      <text:p>#DIV/0!</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="9"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>decentralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1011"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>EthStorage</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E36]/([.D36]*[.C36])" office:value-type="string" office:string-value="" calcext:value-type="error">
+      <text:p>#DIV/0!</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1000" calcext:value-type="float">
+      <text:p>1000</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="9"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>decentralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1011"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Filebase</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E37]/([.D37]*[.C37])" office:value-type="string" office:string-value="" calcext:value-type="error">
+      <text:p>#DIV/0!</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>IPFS Pinning</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>centralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1011"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Filecoin-RAW</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E38]/([.D38]*[.C38])" office:value-type="string" office:string-value="" calcext:value-type="error">
+      <text:p>#DIV/0!</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="4"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>CR-PoReps</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Libp2p-extension</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>decentralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>FIL</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1008"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Home NAS (n,k)</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E39]/([.D39]*[.C39])" office:value-type="string" office:string-value="" calcext:value-type="error">
+      <text:p>#DIV/0!</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="9"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>private</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1011"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Home NAS (verbatim)</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E40]/([.D40]*[.C40])" office:value-type="string" office:string-value="" calcext:value-type="error">
+      <text:p>#DIV/0!</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="9"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>private</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1011"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Logos</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E41]/([.D41]*[.C41])" office:value-type="string" office:string-value="" calcext:value-type="error">
+      <text:p>#DIV/0!</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="9"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>decentralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1011"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Temporal</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E42]/([.D42]*[.C42])" office:value-type="string" office:string-value="" calcext:value-type="error">
+      <text:p>#DIV/0!</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>IPFS Pinning</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="5"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>centralised</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1011"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Scaleway-object</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E43]/([.D43]*[.C43])" office:value-type="string" office:string-value="" calcext:value-type="error">
+      <text:p>#DIV/0!</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1022"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Scaleway-glacier</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E44]/([.D44]*[.C44])" office:value-type="string" office:string-value="" calcext:value-type="error">
+      <text:p>#DIV/0!</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1022"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Scaleway-block</text:p>
+     </table:table-cell>
+     <table:table-cell table:formula="of:=[.E45]/([.D45]*[.C45])" office:value-type="string" office:string-value="" calcext:value-type="error">
+      <text:p>#DIV/0!</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1022"/>
+    </table:table-row>
+   </table:table>
+   <table:table table:name="Node Operations" table:style-name="ta1">
+    <table:table-column table:style-name="co5" table:default-cell-style-name="Default"/>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell/>
+    </table:table-row>
+   </table:table>
+   <table:named-expressions/>
+  </office:spreadsheet>
+ </office:body>
+</office:document>

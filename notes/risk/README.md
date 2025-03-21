@@ -12,7 +12,7 @@ Such properties can be reported in the form of "guarantees," which promise that 
 
 As with all computer systems, the risks and guarantees of storage systems can be best understood when software and infrastructure is open source.
 
-## Availability
+##  Availability
 
 Availability is the property that the desired services — storage and retrieval — can be exercised successfully in a timely manner from a desired initiator. When evaluating a storage platform for future or continued usage, storage customers may wish to *measure current* availability and *forecast future* availability, or *durability*, of the service.
 
