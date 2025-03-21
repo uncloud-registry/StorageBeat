@@ -43,7 +43,7 @@
   (1G,1)	// 15 items
   ```
 
-  
+  Total: 4.5G per run.
 
 * Arweave storage is quite expensive, so we only run tests for a maximum workload size of 10M.
 
@@ -55,6 +55,7 @@
   (1M,1)		(1M,10)	
   (10M,1)	// 6 items
   ```
+  Total: 35M per run
 
 * Requests are made concurrently with a spacing of [1s, 10s]
 
