@@ -1,10 +1,11 @@
 #!/bin/bash
 
 TARGET="${1:-dryrun}"
+FILENUM="${2:-2}"
 FILESIZE="${3:-99}"
 [[ ${4} != M ]] && SIZEUNIT=K || SIZEUNIT=M
 ARGS=${@}
-BMARK=${TARGET}_${FILESIZE}${SIZEUNIT}
+BMARK=${TARGET}_${FILENUM}_${FILESIZE}${SIZEUNIT}
 
 mkdir -p ~/.config/systemd/user/
 
