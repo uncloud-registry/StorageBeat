@@ -15,7 +15,7 @@ sed "s|PARAMS|${BMARK}|g" uploadAndTest.timer.template > ~/.config/systemd/user/
 
 if [ ! -f ~/.config/systemd/user/environment.d/10-path.conf ]; then
     mkdir -p ~/.config/systemd/user/environment.d/10-path.conf
-    echo echo "PATH=${PATH}" > ~/.config/environment.d/10-path.conf
+    echo "PATH=${PATH}" > ~/.config/environment.d/10-path.conf
     systemctl --user daemon-reload
 fi
 

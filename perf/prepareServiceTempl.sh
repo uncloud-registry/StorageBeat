@@ -7,7 +7,7 @@ sed "s%WORKDIR%$(pwd)%g" uploadAndTest@.service > ~/.config/systemd/user/uploadA
 
 if [ ! -f ~/.config/systemd/environment.d/10-path.conf ]; then
     mkdir -p ~/.config/systemd/environment.d
-    echo echo "PATH=${PATH}" > ~/.config/environment.d/10-path.conf
+    echo "PATH=${PATH}" > ~/.config/environment.d/10-path.conf
     systemctl --user daemon-reload
 fi
 
