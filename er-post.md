@@ -2,7 +2,7 @@
 
 **TL;DR.** We introduce the beginnings of a framework for systematically evaluating decentralised storage platforms against one another and against traditional, centralised cloud storage services. We discuss introduce summary metrics and methodology for performance measurement, costs, and risk assessment associated with different types of solution, and present a sample application of the framework in a web frontend modelled after L2Beat and WalletBeat. 
 
-The target audience is a sophisticated user (e.g. CTO of web3 company) evaluating storage backends to support higher level services such as a software registry or CMDB.
+The target audience is a sophisticated user (e.g. CTO of web3 or web3-curious company) evaluating storage backends to support higher level services such as a software registry or CMDB.
 
 ## Background
 
@@ -47,6 +47,8 @@ In terms of the functioning of the storage service itself, we must consider the 
 
 If we aren't able to use the service, the service is *unavailable.*
 
+### Availability
+
 Unavailability can be **local** to the data being requested, or **global** in that it affects the entire service. It can also be **temporary** or **permanent.** All four of the categories so defined can be mitigated by **service diversification**, a core feature of decentralised storage.
 
 * **Global** outages are generally those that affect some service *gateway*. A single backend service can often be accessed through multiple gateways without the client needing to pay for capacity rental multiple times, offering a cost effective route to diversification. 
@@ -54,23 +56,27 @@ Unavailability can be **local** to the data being requested, or **global** in th
 * **Local** outages are a consequence of data loss. A typical feature of web3 storage systems is that a system of *storage proofs* provides some assurance that data remains available to the service provider.
   A local outage that is thought to be unrecoverable is called a **durability failure**.
 
-The question of *correct functioning* depends heavily on the nature of expectations about what this means.  Some basic expectations are as follows:
+TOC:
+
+1. Putting a number to durability
+2. Storage proofs and economic incentives to provide future proofs (lost revenue, slashing, insurance)
+3. Service survival rate
+
+### Correctness
+
+The question of *correct functioning* depends heavily on the details of the service definition.  Some basic expectations are as follows:
 
 * Successfully uploaded content will be available for download for the extent of the contract duration.
-* Retrieved content wil be "correct," where for a distributed system correctness is defined by a database *consistency model*.
-* There will be no unauthorised access to the services (for example, third parties viewing the data). A major part of this is **privacy**, which pertains not only to unauthorised reads but also to leaking information about authorised usage.
+* Retrieved content wil be "correct," where for a distributed system correctness is defined by a database *consistency model*. There are various consistency models arising in practice in decentralised storage:
+  * For **immutable** storage, consistency simply means that the data retrieved under an address is exactly what was uploaded. In practice, this consistency can be validated with a content commitment (checksum, hash). If storage is **content-addressed**, as is often the case for decentralised storage, then the validation of such commitments is built in to the basic infrastructure.
+  * Tradcloud storage offerings typically offer **strong** consistency, which guarantees that retrieved data always reflects the *most recent* update, where recency is understood according to some globally (within the service) defined ordering.
+  * Blockchain state, or other decentralised mutable storage offerings such as Swarm feeds, offers a more exotic consistency model that depends on the mechanism by which the system settles on transaction inclusion and ordering. Finding ways to report the consistency properties of such systems is an open area of research.
+* There will be no unauthorised access to the services (for example, third parties viewing the data). A major part of this is **privacy**, which pertains not only to unauthorised reads but also to leaking information about authorised usage. Though there is undoubtedly much to say on this subject, we have not investigated it deeply.
 
-Miscellaneous risk categories:
+### Miscellaneous risk categories
 
-* **Counterparty risk.** With centralised services, all risks are counterparty risks. 
-  Will the counterparty (service provider) exist in the future? Will they discontinue the contracted service? Will they breach their contract, or breach the customer's expectations of the contract?
-  Decentralised services mitigate counterparty risk via provider diversification.
-
-* **Contract risk.** Risk that the terms of the agreement will not be respected or enforced, or that customer expectations do not reflect the enforced terms. 
-
-  The availability risks outlined above may occur either 
-  Generally, cloud provider agreements do not actually guarantee that any service will be delivered, but only that some kind of "best effort" will be made. While availability SLAs do provide some contractual benefits in case performance is worse than some threshold, these credits are not worth much if the service is generally unavailable. 
-
+* **Counterparty risk.** With centralised services, all risks are counterparty risks. Cryptoeconomic incentives, smart contract enforcement, and counterparty diversification allow many counterparty risks to be mitigated on decentralised platforms.
+* **Contract risk.** Risk that the terms of the agreement will not be respected or enforced, or that customer expectations do not reflect the enforced terms. For centralised services, they are counterparty risks. For decentralised services, they may be replaced with *smart contract risk* which is a risk of incorrect implementation of the contract semantics.
 * **Financial risk.** This includes **price risk** and **currency risk**. In decentralised storage services, both service price and, if fees are priced in a volatile asset, exchange rate can be highly volatile. In the case of sharp price rises, it may be no longer viable to continue with the contracted service, incurring a *migration penalty*. Similarly, if the fee asset is volatile, the client may need to maintain a balance of the asset as a hedge against future price rises, incurring a currency risk penalty.
   The *volatility* of these price series is an easily reported metric for price and currency risks.
 
