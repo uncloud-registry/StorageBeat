@@ -47,18 +47,12 @@ In terms of the functioning of the storage service itself, we must consider the 
 
 If we aren't able to use the service, the service is *unavailable.*
 
-Unavailability can be **local** to the data being requested, or **global** in that it affects the entire service. It can also be **temporary** or **permanent.**
+Unavailability can be **local** to the data being requested, or **global** in that it affects the entire service. It can also be **temporary** or **permanent.** All four of the categories so defined can be mitigated by **service diversification**, a core feature of decentralised storage.
 
-* **local, recoverable.** Data is subject to errors that the provider's internal systems are able to repair. 
-* **local, permanent.** The service has unrecoverably lost access to data. This is known as a **durability failure.**
-* **global, temporary.** System is down temporarily and requests time out or report internal errors. Typical explanations for this type of failure are request congestion or general maintenance.
-* **global, permanent.** Service has completely ceased to function, for example because the provider discontinued the service.
-
-All four categories of risk can be mitigated by **service diversification**, a core feature of decentralised storage.
-
-* **global** outages are generally those that affect some service *gateway*. A single backend service can often be accessed through multiple gateways without the client needing to pay for capacity rental multiple times, offering a cost effective route to diversification. 
+* **Global** outages are generally those that affect some service *gateway*. A single backend service can often be accessed through multiple gateways without the client needing to pay for capacity rental multiple times, offering a cost effective route to diversification. 
   A common example of this is a decentralised storage backend based on a p2p network: often, most accesses will be through a (centralised) web portal for convenience, but in case such is not available, the p2p network is always there as a fallback. The p2p network may also itself be considered a diversified network of gateways.
-* **local** outages are to do with data loss. A typical feature of web3 storage systems is that a system of *storage proofs* provides some assurance that data remains available to the service provider.
+* **Local** outages are a consequence of data loss. A typical feature of web3 storage systems is that a system of *storage proofs* provides some assurance that data remains available to the service provider.
+  A local outage that is thought to be unrecoverable is called a **durability failure**.
 
 The question of *correct functioning* depends heavily on the nature of expectations about what this means.  Some basic expectations are as follows:
 
@@ -79,6 +73,8 @@ Miscellaneous risk categories:
 
 * **Financial risk.** This includes **price risk** and **currency risk**. In decentralised storage services, both service price and, if fees are priced in a volatile asset, exchange rate can be highly volatile. In the case of sharp price rises, it may be no longer viable to continue with the contracted service, incurring a *migration penalty*. Similarly, if the fee asset is volatile, the client may need to maintain a balance of the asset as a hedge against future price rises, incurring a currency risk penalty.
   The *volatility* of these price series is an easily reported metric for price and currency risks.
+
+See [`/notes/risk.md`]()
 
 ## What now?
 
