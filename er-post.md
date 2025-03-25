@@ -19,7 +19,7 @@ The target audience is a sophisticated user (e.g. CTO of web3 or web3-curious co
 
 ## Performance
 
-To properly assess performance of a storage service, the user should run benchmarking experiments based on workloads of the type he expects will be needed to assess whether availability and speed meets requirements. Many of the considerations are identical for traditional cloud and decentralised storage solutions, but for decentralised services there are reasons to expect higher variance in benchmark results under repeated trials.
+To assess performance of a storage service, the user should run benchmarking experiments based on workloads of the type he expects will be needed to assess whether availability and speed meets requirements. The basic considerations are identical for traditional cloud and decentralised storage solutions. but for decentralised services there are a few reasons to expect higher variance in benchmark results under repeated trials.
 
 Controls:
 
@@ -38,29 +38,32 @@ In our experiments, we used the open-source tool [Artillery](https://github.com/
 
 ## Risk
 
-A risk framework gives us concrete risk categories and, where possible, metrics to give us an idea how likely it is that something impairs our use of the service in the future. Since risk analysis requires us to consider not only what service ought to be delivered, but also all the reasons that it might not, the risk framework actually comprises the bulk of the work of evaluating storage services. It is also the largest point of departure in the analysis of centralised versus decentalised services.
+A risk framework gives us concrete risk categories and, where possible, metrics to give us an idea how likely it is that something impairs our use of the service in the future. Since risk analysis requires us to consider not only what service ought to be delivered, but also all the reasons that it might not, the risk framework actually comprises the bulk of the work of evaluating storage services. 
+
+It is also the largest point of departure in the analysis of centralised versus decentalised services: the core offering of the latter is a way to mitigate risks through **diversification**.
 
 In terms of the functioning of the storage service itself, we must consider the following questions:
 
 * Will I be able to use the service in the future?
 * Will the service function correctly in the future?
 
-If we aren't able to use the service, the service is *unavailable.*
-
 ### Availability
 
-Unavailability can be **local** to the data being requested, or **global** in that it affects the entire service. It can also be **temporary** or **permanent.** All four of the categories so defined can be mitigated by **service diversification**, a core feature of decentralised storage.
+If we aren't able to use the service, the service is *unavailable.* Unavailability can be local to the data being requested, or global in that it affects the entire service. It can also be temporary or permanent.
 
-* **Global** outages are generally those that affect some service *gateway*. A single backend service can often be accessed through multiple gateways without the client needing to pay for capacity rental multiple times, offering a cost effective route to diversification. 
-  A common example of this is a decentralised storage backend based on a p2p network: often, most accesses will be through a (centralised) web portal for convenience, but in case such is not available, the p2p network is always there as a fallback. The p2p network may also itself be considered a diversified network of gateways.
-* **Local** outages are a consequence of data loss. A typical feature of web3 storage systems is that a system of *storage proofs* provides some assurance that data remains available to the service provider.
-  A local outage that is thought to be unrecoverable is called a **durability failure**.
+The risk of global outages can be mitigated in the following ways:
 
-TOC:
+- **Survival.** Global, permanent outages arise when a service provider ceases operations. To mitigate this, estimate the survival probability of each service provider over the desired service period and allocate to providers with higher scores.
+- Diversification of service providers.
+  * *Backend diversity.* ==TODO==
+  * *Gateway diversity.* A single backend service can often be accessed through multiple gateways without the client needing to pay for capacity rental multiple times; gateway diversification may therefore be a cost-effective route to risk reduction. For example, one can access many decentralised storage services through a third party web portal for convenience, but in case such is not available, a p2p network is available as a fallback. The p2p network may also itself be considered a diversified network of gateways.
 
-1. Putting a number to durability
-2. Storage proofs and economic incentives to provide future proofs (lost revenue, slashing, insurance)
-3. Service survival rate
+**Local** outages are a consequence of data loss. A typical feature of web3 storage systems is that a system of *storage proofs* provides some assurance that data remains available to the service provider. A local outage that is thought to be unrecoverable is called a **durability failure**.
+
+1. Since a viable storage service should essentially never lose data, putting a credible number to object loss rates is challenging. 
+   Tradcloud services report durability on the "nines" basis, where object loss rate per year is bounded by a power of ten. Though the basic methodology to achieve these numbers is documented,[^backblaze] such reports are not usually backed up by evidence or legal guarantees.[^hetzner-durability]
+   In decentralised cloud, the global rate of node failure or data loss can be observed by tracking missed storage proofs. The tradcloud methodology could then be applied to extrapolate the observed rate to a formal probability of losing a replicated or otherwise expanded object distributed over the node population.[^codex]
+2. A service provider may publish storage proofs as evidence that they retain access to the data at that point. Attaching explicit incentives to storage proof publication is supposed to foster a population of providers who strive to retain access to client data in the future so that they may claim these incentives. Incentives may be in the form of revenue or the threat of collateral seizure ("slashing").
 
 ### Correctness
 
@@ -73,11 +76,13 @@ The question of *correct functioning* depends heavily on the details of the serv
   * Blockchain state, or other decentralised mutable storage offerings such as Swarm feeds, offers a more exotic consistency model that depends on the mechanism by which the system settles on transaction inclusion and ordering. Finding ways to report the consistency properties of such systems is an open area of research.
 * There will be no unauthorised access to the services (for example, third parties viewing the data). A major part of this is **privacy**, which pertains not only to unauthorised reads but also to leaking information about authorised usage. Though there is undoubtedly much to say on this subject, we have not investigated it deeply.
 
-### Miscellaneous risk categories
+### Generic service risk categories
+
+Considerations within these categories apply to all decentralised services, not storage specific.
 
 * **Counterparty risk.** With centralised services, all risks are counterparty risks. Cryptoeconomic incentives, smart contract enforcement, and counterparty diversification allow many counterparty risks to be mitigated on decentralised platforms.
 * **Contract risk.** Risk that the terms of the agreement will not be respected or enforced, or that customer expectations do not reflect the enforced terms. For centralised services, they are counterparty risks. For decentralised services, they may be replaced with *smart contract risk* which is a risk of incorrect implementation of the contract semantics.
-* **Financial risk.** This includes **price risk** and **currency risk**. In decentralised storage services, both service price and, if fees are priced in a volatile asset, exchange rate can be highly volatile. In the case of sharp price rises, it may be no longer viable to continue with the contracted service, incurring a *migration penalty*. Similarly, if the fee asset is volatile, the client may need to maintain a balance of the asset as a hedge against future price rises, incurring a currency risk penalty.
+* **Financial risk.** This includes **price risk** and **currency risk**. In decentralised services, both service price and, if fees are priced in a volatile asset, exchange rate is often highly volatile. In the case of sharp price rises, it may be no longer viable to continue with the contracted service, incurring a migration penalty. Similarly, if the fee asset is volatile, the client may need to maintain a balance of the asset as a hedge against future price rises, incurring a currency risk penalty.
   The *volatility* of these price series is an easily reported metric for price and currency risks.
 
 See [`/notes/risk.md`]()
