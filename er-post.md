@@ -27,7 +27,7 @@ Controls:
 * **location and time. **Environmental factors such as request initiator location and time of day may be significant, particularly for services used by members or staff of globally distributed organisations. 
 * **upload configuration.** For benchmarking downloads, the experimenter can control the way (time, location, content) in which the target data was uploaded. Linking downloaded data to specific upload metadata may entail an orchestration problem, especially if multiple initiator locations are used.
 
-Since this is all rather complex, summary statistics such as **latency** (a.k.a. time to first byte) and **steady state throughput** can still be useful for making a quick assessment. While it is not hard to find tools to measure latency and steady state throughput (SST) of download requests, a simple heuristic can be used to estimate these with even with only raw request timings:
+Since this is all rather complex, summary statistics such as **latency** (a.k.a. time to first byte) and **steady state throughput**[^sst-def] can still be useful for making a quick assessment. While it is not hard to find tools to measure latency and steady state throughput (SST) of download requests, a simple heuristic can be used to estimate these with even with only raw request timings:
 
 * Latency is approximately the time to complete a request for a very small file (e.g. a 1KiB file should fit into a single Ethernet frame, or a 4KiB into a single memory page).
 * SST is approximately the ratio of the time to complete a request for a very large file to the file's size. This approximation assumes that for large files, bandwidth usage reaches a steady state, which is expected for high quality data transit services.
@@ -35,6 +35,8 @@ Since this is all rather complex, summary statistics such as **latency** (a.k.a.
 Finally, the **error rate** and **timeout rate** (given a fixed time limit) are both important and easy-to-understand measures of availability. For traditional cloud service providers, error code rate limits (specifically server-side HTTP 5xx codes) are usually guaranteed by an SLA which offers account credits as compensation if limits are exceeded.
 
 In our experiments, we used the open-source tool [Artillery](https://github.com/artilleryio/artillery) to collect request completion times for various workloads at different times of day and compute summary statistics. More details are available in our GitHub repo under the [`perf/`](https://github.com/uncloud-registry/StorageBeat/tree/main/perf) directory.
+
+[^sst-def]: https://glossary.atis.org/glossary/steady-state-throughput/
 
 ## Risk
 
