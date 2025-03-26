@@ -53,17 +53,28 @@ If we aren't able to use the service, the service is *unavailable.* Unavailabili
 
 The risk of global outages can be mitigated in the following ways:
 
+- **SLA.** A service-level agreement provides an indemnity for some type of service failure. Tradcloud services typically offer compensation for an *error rate* exceeding a certain limit, e.g. 99% in a five minute window.[^s3-sla]
+
 - **Survival.** Global, permanent outages arise when a service provider ceases operations. To mitigate this, estimate the survival probability of each service provider over the desired service period and allocate to providers with higher scores.
-- Diversification of service providers.
-  * *Backend diversity.* ==TODO==
+
+- **Diversification** of service providers. 
+
+  * *Backend diversity.* When data is split and distributed among multiple backend storage providers, the risk of correlated failure is reduced. The effect is stronger when providers are diverse along multiple axes (jurisdiction, locality, technology, corporate structure, etc.).
   * *Gateway diversity.* A single backend service can often be accessed through multiple gateways without the client needing to pay for capacity rental multiple times; gateway diversification may therefore be a cost-effective route to risk reduction. For example, one can access many decentralised storage services through a third party web portal for convenience, but in case such is not available, a p2p network is available as a fallback. The p2p network may also itself be considered a diversified network of gateways.
 
-**Local** outages are a consequence of data loss. A typical feature of web3 storage systems is that a system of *storage proofs* provides some assurance that data remains available to the service provider. A local outage that is thought to be unrecoverable is called a **durability failure**.
+  We don't have a simple numerical measure that captures diversification, but measuring the entropy of various distributions — such as capacity share per provider — can give a preliminary indication.
 
-1. Since a viable storage service should essentially never lose data, putting a credible number to object loss rates is challenging. 
+Local outages are a consequence of data loss. A typical feature of web3 storage systems is that a system of **storage proofs** provides some assurance that data remains available to the service provider. A local outage that is thought to be unrecoverable is called a **durability failure**.
+
+1. Storage services should essentially never lose data. It can therefore be challenging to put a credible number to object loss rate on reasonably stable services.
    Tradcloud services report durability on the "nines" basis, where object loss rate per year is bounded by a power of ten. Though the basic methodology to achieve these numbers is documented,[^backblaze] such reports are not usually backed up by evidence or legal guarantees.[^hetzner-durability]
    In decentralised cloud, the global rate of node failure or data loss can be observed by tracking missed storage proofs. The tradcloud methodology could then be applied to extrapolate the observed rate to a formal probability of losing a replicated or otherwise expanded object distributed over the node population.[^codex]
 2. A service provider may publish storage proofs as evidence that they retain access to the data at that point. Attaching explicit incentives to storage proof publication is supposed to foster a population of providers who strive to retain access to client data in the future so that they may claim these incentives. Incentives may be in the form of revenue or the threat of collateral seizure ("slashing").
+
+[^s3-sla]: https://aws.amazon.com/s3/sla/
+[^backblaze]: https://www.backblaze.com/blog/cloud-storage-durability/
+[^hetzner-durability]: See $\S$6 of https://www.hetzner.com/legal/terms-and-conditions/
+[^codex]: https://docs.codex.storage/learn/whitepaper#_3-decentralized-durability-engines-dde
 
 ### Correctness
 
@@ -85,12 +96,13 @@ Considerations within these categories apply to all decentralised services, not 
 * **Financial risk.** This includes **price risk** and **currency risk**. In decentralised services, both service price and, if fees are priced in a volatile asset, exchange rate is often highly volatile. In the case of sharp price rises, it may be no longer viable to continue with the contracted service, incurring a migration penalty. Similarly, if the fee asset is volatile, the client may need to maintain a balance of the asset as a hedge against future price rises, incurring a currency risk penalty.
   The *volatility* of these price series is an easily reported metric for price and currency risks.
 
-See [`/notes/risk.md`]()
+See [`/notes/risk/`]() for more detailed notes.
 
 ## What now?
 
 * For teams that build or want to build with off-chain storage — what do you need to know? What's missing? What resources have you used?
 * For teams building decentralised storage systems — let's work together to further refine these metrics, develop measurement methodologies, and forge a common language!
+* What we'd like to see: more hybrid models! Centralised cloud services that provide storage proofs! Decentralised platforms with an availability SLA and (something approaching) strong consistency for mutable data!
 
 * Further research topics:
   * Research ways to measure provider *diversity* through clustering, deanonymisation, and geolocation techniques. Encourage larger scale operators to voluntarily declare their addresses in the name of transparency.
