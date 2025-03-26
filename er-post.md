@@ -29,6 +29,7 @@ Controls:
 
 Since this is all rather complex, summary statistics such as **latency** (a.k.a. time to first byte) and **steady state throughput**[^sst-def] (SST) can still be useful for making a quick assessment. While it is not hard to find tools to measure latency and steady state throughput (SST) of download requests, a simple heuristic can be used to estimate these with even with only raw request timings:
 
+
 * Latency is approximately the time to complete a request for a very small file (e.g. a 1KiB file should fit into a single Ethernet frame, or a 4KiB into a single memory page).
 * SST is approximately the ratio of the time to complete a request for a very large file to the file's size. This approximation assumes that for large files, bandwidth usage reaches a steady state, which is expected for high quality data transit services.
 
