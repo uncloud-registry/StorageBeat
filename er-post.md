@@ -27,7 +27,7 @@ Controls:
 * **location and time. **Environmental factors such as request initiator location and time of day may be significant, particularly for services used by members or staff of globally distributed organisations. 
 * **upload configuration.** For benchmarking downloads, the experimenter can control the way (time, location, content) in which the target data was uploaded. Linking downloaded data to specific upload metadata may entail an orchestration problem, especially if multiple initiator locations are used.
 
-Since this is all rather complex, summary statistics such as **latency** (a.k.a. time to first byte) and **steady state throughput** (SST) can still be useful for making a quick assessment. While it is not hard to find tools to measure latency and steady state throughput of download requests, a simple heuristic can be used to estimate these with even with only raw request timings:
+Since this is all rather complex, summary statistics such as **latency** (a.k.a. time to first byte) and **steady state throughput**[^sst-def] (SST) can still be useful for making a quick assessment. While it is not hard to find tools to measure latency and steady state throughput (SST) of download requests, a simple heuristic can be used to estimate these with even with only raw request timings:
 
 * Latency is approximately the time to complete a request for a very small file (e.g. a 1KiB file should fit into a single Ethernet frame, or a 4KiB into a single memory page).
 * SST is approximately the ratio of the time to complete a request for a very large file to the file's size. This approximation assumes that for large files, bandwidth usage reaches a steady state, which is expected for high quality data transit services.
@@ -35,6 +35,8 @@ Since this is all rather complex, summary statistics such as **latency** (a.k.a.
 Finally, the **error rate** and **timeout rate** (given a fixed time limit) are both important and easy-to-understand measures of availability. For traditional cloud service providers, error code rate limits (specifically server-side HTTP 5xx codes) are usually guaranteed by an SLA which offers account credits as compensation if limits are exceeded.
 
 In our experiments, we used the open-source tool [Artillery](https://github.com/artilleryio/artillery) to collect request completion times for various workloads at different times of day and compute summary statistics. More details are available in our GitHub repo under the [`perf/`](https://github.com/uncloud-registry/StorageBeat/tree/main/perf) directory.
+
+[^sst-def]: https://glossary.atis.org/glossary/steady-state-throughput/
 
 ## Risk
 
@@ -60,7 +62,7 @@ The risk of global outages can be mitigated in the following ways:
 - **Diversification** of service providers. 
 
   * *Backend diversity.* When data is split and distributed among multiple backend storage providers, the risk of correlated failure is reduced. The effect is stronger when providers are diverse along multiple axes (jurisdiction, locality, technology, corporate structure, etc.).
-  * *Gateway diversity.* A single backend service can often be accessed through multiple gateways without the client needing to pay for capacity rental multiple times; gateway diversification may therefore be a cost-effective route to risk reduction. For example, one can access many decentralised storage services through a third party web portal for convenience, but in case such is not available, a p2p network is available as a fallback. The p2p network may also itself be considered a diversified network of gateways.
+  * *Gateway diversity.* A single backend service can often be accessed through multiple gateways without the need for replicating capacity rental; gateway diversification can therefore be a cost-effective route to risk reduction. For example, one can access many decentralised storage services through a third party web gateway for convenience, but in case such is not available, the p2p network is available as a fallback. The p2p network may also itself be considered a diversified network of gateways.
 
   We don't have a simple numerical measure that captures diversification, but measuring the entropy of various distributions — such as capacity share per provider — can give a preliminary indication.
 
@@ -100,11 +102,11 @@ See [`/notes/risk/`]() for more detailed notes.
 
 ## What now?
 
-* For teams that build or want to build with off-chain storage — what do you need to know? What's missing? What resources have you used?
-* For teams building decentralised storage systems — let's work together to further refine these metrics, develop measurement methodologies, and forge a common language!
+* For teams that build or want to build with off-chain storage — what do you need to know? What's missing? What resources have you used to gather information?
+* For teams building decentralised storage systems — let's work together to further refine these metrics, develop measurement methodologies, and forge a common language.
 * What we'd like to see: more hybrid models! Centralised cloud services that provide storage proofs! Decentralised platforms with an availability SLA and (something approaching) strong consistency for mutable data!
 
 * Further research topics:
-  * Research ways to measure provider *diversity* through clustering, deanonymisation, and geolocation techniques. Encourage larger scale operators to voluntarily declare their addresses in the name of transparency.
-  * Develop durability model and systematic measurements of durability on decentralised systems for which it makes sense.
+  * Research ways to measure provider *diversity* through clustering and geolocation techniques. Encourage larger scale operators to voluntarily declare their addresses in the name of transparency.
+  * Develop durability model and carry out systematic measurements of durability on decentralised systems for which it makes sense.
   * More work is needed on consistency and privacy, which we have barely addressed! If you are an expert in one of these fields, please reach out so we can work together to enhance our models.
