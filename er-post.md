@@ -60,7 +60,7 @@ The risk of global outages can be mitigated in the following ways:
 - **Diversification** of service providers. 
 
   * *Backend diversity.* When data is split and distributed among multiple backend storage providers, the risk of correlated failure is reduced. The effect is stronger when providers are diverse along multiple axes (jurisdiction, locality, technology, corporate structure, etc.).
-  * *Gateway diversity.* A single backend service can often be accessed through multiple gateways without the client needing to pay for capacity rental multiple times; gateway diversification may therefore be a cost-effective route to risk reduction. For example, one can access many decentralised storage services through a third party web portal for convenience, but in case such is not available, a p2p network is available as a fallback. The p2p network may also itself be considered a diversified network of gateways.
+  * *Gateway diversity.* A single backend service can often be accessed through multiple gateways without the need for replicating capacity rental; gateway diversification can therefore be a cost-effective route to risk reduction. For example, one can access many decentralised storage services through a third party web gateway for convenience, but in case such is not available, the p2p network is available as a fallback. The p2p network may also itself be considered a diversified network of gateways.
 
   We don't have a simple numerical measure that captures diversification, but measuring the entropy of various distributions — such as capacity share per provider — can give a preliminary indication.
 
@@ -100,11 +100,11 @@ See [`/notes/risk/`]() for more detailed notes.
 
 ## What now?
 
-* For teams that build or want to build with off-chain storage — what do you need to know? What's missing? What resources have you used?
-* For teams building decentralised storage systems — let's work together to further refine these metrics, develop measurement methodologies, and forge a common language!
+* For teams that build or want to build with off-chain storage — what do you need to know? What's missing? What resources have you used to gather information?
+* For teams building decentralised storage systems — let's work together to further refine these metrics, develop measurement methodologies, and forge a common language.
 * What we'd like to see: more hybrid models! Centralised cloud services that provide storage proofs! Decentralised platforms with an availability SLA and (something approaching) strong consistency for mutable data!
 
 * Further research topics:
-  * Research ways to measure provider *diversity* through clustering, deanonymisation, and geolocation techniques. Encourage larger scale operators to voluntarily declare their addresses in the name of transparency.
-  * Develop durability model and systematic measurements of durability on decentralised systems for which it makes sense.
+  * Research ways to measure provider *diversity* through clustering and geolocation techniques. Encourage larger scale operators to voluntarily declare their addresses in the name of transparency.
+  * Develop durability model and carry out systematic measurements of durability on decentralised systems for which it makes sense.
   * More work is needed on consistency and privacy, which we have barely addressed! If you are an expert in one of these fields, please reach out so we can work together to enhance our models.
