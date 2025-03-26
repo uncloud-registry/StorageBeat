@@ -1,14 +1,14 @@
 # StorageBeat: Towards an evaluation framework for decentralised storage
 
-**TL;DR.** We introduce the beginnings of a framework for systematically evaluating decentralised storage platforms against one another and against traditional, centralised cloud storage services. We discuss introduce summary metrics and methodology for performance measurement, costs, and risk assessment associated with different types of solution, and present a sample application of the framework in a web frontend modelled after L2Beat and WalletBeat. 
+**TL;DR.** We introduce the beginnings of a framework for systematically evaluating decentralised storage platforms against one another and against traditional, centralised cloud storage services. We introduce summary metrics and methodology for performance measurements, costs, and risk assessments associated with different types of solution, and present a sample application of the framework in a web frontend modelled after L2Beat and WalletBeat. 
 
-The target audience is a sophisticated user (e.g. CTO of web3 or web3-curious company) evaluating storage backends to support higher level services such as a software registry or CMDB.
+The target audience is a sophisticated user (e.g. CTO of a web3 or web3-curious company) evaluating storage backends to support higher level services such as a software registry or CMDB.
 
 ## Background
 
 * The decentralised storage landscape is highly fragmented.
 * Early misunderstandings about what existing storage infrastructure, especially IPFS, actually offer persist.
-  The most well-known decentralised storage options are targeted only at niche use cases, such as "permanent" storage or archival. Similarly, this fact does not seem to be that widely understood in the Ethereum (or general Web3) community.
+  The most well-known decentralised storage options are targeted only at niche use cases, such as "permanent" storage or archival. Similarly persistent is this fact does not seem to be that widely understood in the Ethereum (or general Web3) community.
 * The core offerings of decentralised storage are blockchain based payment and storage contract management, cryptographically verifiabile service, and provider diversity.
 * Ethereum would benefit from a systematic methodology for measuring and comparing these features. For example, how diverse is the provider landscape? What exactly does the storage proof system prove? What exactly does "availability" mean? (Despite major effort and investment in the field of *Data Availability,* the community still does not seem to agree on a definition of what it means for data to be *available*.)
 * Moreover, to facilitate migration from (or hybrid usage with) traditional cloud services, where possible common metrics or features should be defined for apples-to-apples comparisons.
@@ -19,7 +19,7 @@ The target audience is a sophisticated user (e.g. CTO of web3 or web3-curious co
 
 ## Performance
 
-To assess performance of a storage service, the user should run benchmarking experiments based on workloads of the type he expects will be needed to assess whether availability and speed meets requirements. The basic considerations are identical for traditional cloud and decentralised storage solutions. but for decentralised services there are a few reasons to expect higher variance in benchmark results under repeated trials.
+To assess performance of a storage service, the astute user should run benchmarking experiments based on workloads of the type he expects will be needed to assess whether availability and speed meets requirements. The basic considerations are identical for traditional cloud and decentralised storage solutions. But for decentralised services there are a few reasons to expect higher variance in benchmark results under repeated trials.
 
 Controls:
 
@@ -27,7 +27,7 @@ Controls:
 * **location and time. **Environmental factors such as request initiator location and time of day may be significant, particularly for services used by members or staff of globally distributed organisations. 
 * **upload configuration.** For benchmarking downloads, the experimenter can control the way (time, location, content) in which the target data was uploaded. Linking downloaded data to specific upload metadata may entail an orchestration problem, especially if multiple initiator locations are used.
 
-Since this is all rather complex, summary statistics such as **latency** (a.k.a. time to first byte) and **steady state throughput** can still be useful for making a quick assessment. While it is not hard to find tools to measure latency and steady state throughput (SST) of download requests, a simple heuristic can be used to estimate these with even with only raw request timings:
+Since this is all rather complex, summary statistics such as **latency** (a.k.a. time to first byte) and **steady state throughput** (SST) can still be useful for making a quick assessment. While it is not hard to find tools to measure latency and steady state throughput of download requests, a simple heuristic can be used to estimate these with even with only raw request timings:
 
 * Latency is approximately the time to complete a request for a very small file (e.g. a 1KiB file should fit into a single Ethernet frame, or a 4KiB into a single memory page).
 * SST is approximately the ratio of the time to complete a request for a very large file to the file's size. This approximation assumes that for large files, bandwidth usage reaches a steady state, which is expected for high quality data transit services.
@@ -38,7 +38,7 @@ In our experiments, we used the open-source tool [Artillery](https://github.com/
 
 ## Risk
 
-A risk framework gives us concrete risk categories and, where possible, metrics to give us an idea how likely it is that something impairs our use of the service in the future. Since risk analysis requires us to consider not only what service ought to be delivered, but also all the reasons that it might not, the risk framework actually comprises the bulk of the work of evaluating storage services. 
+A risk framework gives us concrete risk categories and, where possible, metrics to give us an idea of how likely it is that something impairs our use of the service in the future. Since risk analysis requires us to consider not only what service ought to be delivered, but also all the reasons that it might not, the risk framework actually comprises the bulk of the work of evaluating storage services. 
 
 It is also the largest point of departure in the analysis of centralised versus decentalised services: the core offering of the latter is a way to mitigate risks through **diversification**.
 
@@ -66,7 +66,7 @@ The risk of global outages can be mitigated in the following ways:
 
 Local outages are a consequence of data loss. A typical feature of web3 storage systems is that a system of **storage proofs** provides some assurance that data remains available to the service provider. A local outage that is thought to be unrecoverable is called a **durability failure**.
 
-1. Storage services should essentially never lose data. It can therefore be challenging to put a credible number to object loss rate on reasonably stable services.
+1. Storage services ought to essentially never lose data. It can therefore be challenging to put a credible number to object loss rate on reasonably stable services.
    Tradcloud services report durability on the "nines" basis, where object loss rate per year is bounded by a power of ten. Though the basic methodology to achieve these numbers is documented,[^backblaze] such reports are not usually backed up by evidence or legal guarantees.[^hetzner-durability]
    In decentralised cloud, the global rate of node failure or data loss can be observed by tracking missed storage proofs. The tradcloud methodology could then be applied to extrapolate the observed rate to a formal probability of losing a replicated or otherwise expanded object distributed over the node population.[^codex]
 2. A service provider may publish storage proofs as evidence that they retain access to the data at that point. Attaching explicit incentives to storage proof publication is supposed to foster a population of providers who strive to retain access to client data in the future so that they may claim these incentives. Incentives may be in the form of revenue or the threat of collateral seizure ("slashing").
