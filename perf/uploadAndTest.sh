@@ -27,7 +27,7 @@ upload() {
         echo "You do not have any stamps."
         exit 1
       fi
-      UPLOAD="swarm-cli upload tests/random_data_file_${2} --stamp $STAMP --bee-api-url $BEE_URL | awk '/hash/ {print \$3}'"
+      UPLOAD="swarm-cli upload tests/random_data_file_${2} --stamp $STAMP --quiet --bee-api-url $BEE_URL"
       ;;
     arweave)
       UPLOAD="ardrive upload-file --local-path tests/random_data_file_${2} -F $ARDRIVE_FOLDER -w $ARDRIVE_WALLET --turbo | jq -r '.created[0].dataTxId'"
@@ -50,7 +50,7 @@ upload() {
 }
 
 for ((i=1; i<=FILENUM; i++)); do
-  dd if=/dev/urandom of=tests/random_data_file bs=1${SIZEUNIT} count=${FILESIZE}
+  dd if=/dev/urandom of=tests/random_data_file bs=1${SIZEUNIT} count=${FILESIZE} conv=fsync &> /dev/null
   #get fileid from first alpha numeric symbols in generated file
   FILEID=$(tr -dc A-Za-z0-9 < tests/random_data_file | head -c 13)
   cp tests/random_data_file tests/random_data_file_${FILEID}
@@ -61,7 +61,7 @@ done
 cp tests/current_payload_${BMARK}.csv tests/payload_${BMARK}_${TIMESTAMP}.csv
 
 if [ $TARGET != "dryrun" ]; then
-  systemd-run --user --on-active=600 -d artillery run -o tests/report_${BMARK}_${TIMESTAMP}.json -q -e $TARGET -v '{"payload":"tests/current_payload_'${BMARK}'.csv"}' --overrides '{"config":{"phases":[{"duration":'${FILENUM}',"arrivalRate":1}]}}' $TESTSCRIPT 
+  systemd-run --user --on-active=3600 -d artillery run -o tests/report_${BMARK}_${TIMESTAMP}.json -q -e $TARGET -v '{"payload":"tests/current_payload_'${BMARK}'.csv"}' --overrides '{"config":{"phases":[{"duration":'$((FILENUM*2))',"arrivalCount":'${FILENUM}'}]}}' $TESTSCRIPT 
 else
   echo artillery run -o tests/report_${BMARK}_${TIMESTAMP}.json -q -e $TARGET -v '{"payload":"tests/current_payload_'${BMARK}'.csv"}' --overrides '{"config":{"phases":[{"duration":'${FILENUM}',"arrivalRate":1}]}}' $TESTSCRIPT
 fi
