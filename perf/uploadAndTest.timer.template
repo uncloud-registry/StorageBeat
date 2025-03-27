@@ -2,7 +2,7 @@
 Description="Run upload and benchmark: PARAMS"
 
 [Timer]
-OnUnitActiveSec=12h
+OnUnitActiveSec=24h
 Unit=uploadAndTest_PARAMS.service
 Persistent=true
 
