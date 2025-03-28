@@ -86,6 +86,12 @@ struct Workload {
 
 ## Controls
 
+When designing experiments, we should try to control for environmental factors as much as possible. Controls that can be implemented by the experiment designer include:
+
+* *Client configuration, gateway, service tier.* Perhaps obvious, but experiments must take care to control for the service and client configuration. For tradcloud providers, service configuration includes the data of which service tier is selected. In decentralised cloud, the experimenter must specify which gateway is used, whether third party or self-hosted.
+* *Location and time.* Environmental factors such as request initiator location and time of day may be significant for performance. Location and time controlled metrics may be important for services used by members of globally distributed teams.
+* *Upload configuration.* For benchmarking downloads, the experimenter can control the way (time, location, content) in which the target data was uploaded. Linking downloaded data to specific upload metadata may entail an orchestration problem, especially if multiple initiator locations are used.
+
 ### Geolocation
 
 In (Bocchi, 2014), the authors expend some efforts to figure out where in the world service endpoints are located and the routes that packets travel to reach them. Round trip times (RTT) are tested and plotted. 
