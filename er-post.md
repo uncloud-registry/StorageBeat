@@ -10,8 +10,9 @@ The target audience is a sophisticated user (e.g. CTO of a web3 or web3-curious 
 * Early misunderstandings about what existing storage infrastructure, especially IPFS, actually offer persist.
   The most well-known decentralised storage options are targeted only at niche use cases, such as "permanent" storage or archival. Similarly persistent is this fact does not seem to be that widely understood in the Ethereum (or general Web3) community.
 * The core offerings of decentralised storage are blockchain based payment and storage contract management, cryptographically verifiabile service, and provider diversity.
-* Ethereum would benefit from a systematic methodology for measuring and comparing these features. For example, how diverse is the provider landscape? What exactly does the storage proof system prove? What exactly does "availability" mean? (Despite major effort and investment in the field of *Data Availability,* the community still does not seem to agree on a definition of what it means for data to be *available*.)
+* Ethereum would benefit from a systematic methodology for measuring and comparing these features. For example, how diverse is the provider landscape? What exactly does the storage proof system prove? What exactly does "availability" mean? Despite major effort and investment in the field of *Data Availability,* the community still does not seem to agree on a definition of what it means for data to be *available*.)
 * Moreover, to facilitate migration from (or hybrid usage with) traditional cloud services, where possible common metrics or features should be defined for apples-to-apples comparisons.
+* This post is an overview of the elements the StorageBeat team feel should enter into an evaluation framework for decentralised storage. More in-depth exposition and technical details on each element can be found in our GitHub repository: https://github.com/uncloud-registry/StorageBeat/tree/main/notes
 
 ## Costs
 
@@ -19,23 +20,17 @@ The target audience is a sophisticated user (e.g. CTO of a web3 or web3-curious 
 
 ## Performance
 
-To assess performance of a storage service, the astute user should run benchmarking experiments based on workloads of the type he expects will be needed to assess whether availability and speed meets requirements. The basic considerations are identical for traditional cloud and decentralised storage solutions. But for decentralised services there are a few reasons to expect higher variance in benchmark results under repeated trials.
+To assess performance of a storage service, the user should run benchmarking experiments based on workloads of the type he expects will be needed to assess whether availability and speed meets requirements. Most of the basic considerations in benchmarking decentralised services are the same as for traditional cloud, and it is beyond the scope of this post to go into the many dimensions of cloud benchmark design and implementation.[^benchmark-book] Instead, apart from a comment on nondeterminism we simply describe the statistics we have chosen for StorageBeat. For further details of the rationale we developed for our experiments, see [`./perf/README.md`](https://github.com/uncloud-registry/StorageBeat/blob/main/perf/README.md).
 
-Controls:
+[^benchmark-book]: For a textbook treatment of the subject, see https://link.springer.com/book/10.1007/978-3-319-55483-9
 
-* **cache state.** Throughout the lifecycle of a request it may touch numerous layers of cache. These are difficult to control for in performance experiments, especially when they belong to systems outside the control of the experimenter (e.g. a CDN). When data is distributed across a peer-to-peer network, *propagation state* is an artefact of the same issue.
-* **location and time. **Environmental factors such as request initiator location and time of day may be significant, particularly for services used by members or staff of globally distributed organisations. 
-* **upload configuration.** For benchmarking downloads, the experimenter can control the way (time, location, content) in which the target data was uploaded. Linking downloaded data to specific upload metadata may entail an orchestration problem, especially if multiple initiator locations are used.
+While **nondeterminism** in the state of external systems is already an issue for tradcloud services, there are reasons to expect qualitative differences in the shapes of distributions of performance metrics in decentralised storage. First, in principle, the provider diversification offered by decentralised storage systems should help reduce variance in performance measurements. On the other hand, the lower barrier to entry for providers on decentralised storage markets probably means the variability for each individual provider is much higher than tradcloud hyperscalers. In practice, we observe higher variance in measurements of the less mature decentralised storage platforms.
 
-Since this is all rather complex, summary statistics such as **latency** (a.k.a. time to first byte) and **steady state throughput**[^sst-def] (SST) can still be useful for making a quick assessment. While it is not hard to find tools to measure latency and steady state throughput (SST) of download requests, a simple heuristic can be used to estimate these with even with only raw request timings:
-
-
-* Latency is approximately the time to complete a request for a very small file (e.g. a 1KiB file should fit into a single Ethernet frame, or a 4KiB into a single memory page).
-* SST is approximately the ratio of the time to complete a request for a very large file to the file's size. This approximation assumes that for large files, bandwidth usage reaches a steady state, which is expected for high quality data transit services.
+Since tracking and reporting performance across many workloads and control scenarios is rather complex, for publicly communicating performance measurements it is helpful to quote simple summary statistics. In our sample website we have quoted estimates of mean **latency** (a.k.a. time to first byte) and **steady state throughput**[^sst-def] (SST). For benchmark portability reasons, we estimate these as the request completion time for a very small file and the mean download speed of a request for a large file, respectively.
 
 Finally, the **error rate** and **timeout rate** (given a fixed time limit) are both important and easy-to-understand measures of availability. For traditional cloud service providers, error code rate limits (specifically server-side HTTP 5xx codes) are usually guaranteed by an SLA which offers account credits as compensation if limits are exceeded.
 
-In our experiments, we used the open-source tool [Artillery](https://github.com/artilleryio/artillery) to collect request completion times for various workloads at different times of day and compute summary statistics. More details are available in our GitHub repo under the [`perf/`](https://github.com/uncloud-registry/StorageBeat/tree/main/perf) directory.
+In our experiments, we used the open-source tool [Artillery](https://github.com/artilleryio/artillery) to collect request completion times for different workloads. More details are available in our GitHub repo under the [`perf/`](https://github.com/uncloud-registry/StorageBeat/tree/main/perf) directory.
 
 [^sst-def]: https://glossary.atis.org/glossary/steady-state-throughput/
 
