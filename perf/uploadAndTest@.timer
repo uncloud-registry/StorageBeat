@@ -2,7 +2,7 @@
 Description="Upload files and run benchmark: %I"
 
 [Timer]
-OnUnitActiveSec=12h
+OnUnitActiveSec=24h
 Unit=uploadAndTest@%i.service
 Persistent=true
 
