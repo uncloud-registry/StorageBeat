@@ -8,7 +8,7 @@ Columns Notes:
 
 2. Performance Metrics
 
-   1. Max Throughput — 
+   1. Steady State Throughput — (avg. download speed for  fetching a  1 GB )
 
       (Plot: x=size, y=avg. speed)
 
