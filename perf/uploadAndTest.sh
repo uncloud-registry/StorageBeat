@@ -13,6 +13,7 @@ BMARK=${TARGET}_${FILENUM}_${FILESIZE}${SIZEUNIT}
 BEE_URL="${BEE_URL:-http://localhost:1633}"
 
 TESTSCRIPT=StorageBeat.yml
+OVERRIDES="--overrides '{\"config\":{\"phases\":[{\"duration\":$((FILENUM*2)),\"arrivalCount\":${FILENUM}}]}}'"
 TIMESTAMP=$(date +%s)
 
 mkdir -p tests
@@ -39,6 +40,7 @@ upload() {
       UPLOAD="mc share download --expire 2h $S3_PATH/random_data_file_${2} | grep Share | sed 's/.*\/\/[^\/]*\///'"
       ;;
     ipfs)
+      ipfs repo gc > /dev/null
       UPLOAD="pinata upload tests/random_data_file_${2} | jq -r '.cid'"
       ;;
     *)
@@ -61,7 +63,7 @@ done
 cp tests/current_payload_${BMARK}.csv tests/payload_${BMARK}_${TIMESTAMP}.csv
 
 if [ $TARGET != "dryrun" ]; then
-  systemd-run --user --on-active=3600 -d artillery run -o tests/report_${BMARK}_${TIMESTAMP}.json -q -e $TARGET -v '{"payload":"tests/current_payload_'${BMARK}'.csv"}' --overrides '{"config":{"phases":[{"duration":'$((FILENUM*2))',"arrivalCount":'${FILENUM}'}]}}' $TESTSCRIPT 
+  systemd-run --user --on-active=3600 -d artillery run -o tests/report_${BMARK}_${TIMESTAMP}.json -q -e $TARGET -v '{"payload":"tests/current_payload_'${BMARK}'.csv"}' ${OVERRIDES} $TESTSCRIPT 
 else
   echo artillery run -o tests/report_${BMARK}_${TIMESTAMP}.json -q -e $TARGET -v '{"payload":"tests/current_payload_'${BMARK}'.csv"}' --overrides '{"config":{"phases":[{"duration":'${FILENUM}',"arrivalRate":1}]}}' $TESTSCRIPT
 fi
