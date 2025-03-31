@@ -1,0 +1,13 @@
+[Unit]
+Description=Run performance benchmarks in sequence
+
+[Service]
+WorkingDirectory=WORKDIR
+ExecStart=WORKDIR/testSequencer.sh
+Restart=on-failure
+RestartSec=10s
+StartLimitInterval=5min
+StartLimitBurst=3
+
+[Install]
+WantedBy=default.target

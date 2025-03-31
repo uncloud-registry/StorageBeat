@@ -1,0 +1,10 @@
+[Unit]
+Description="Run test sequencer every 2 hours"
+
+[Timer]
+OnCalendar=00/2:00
+Unit=testSequencer.service
+Persistent=true
+
+[Install]
+WantedBy=default.target
