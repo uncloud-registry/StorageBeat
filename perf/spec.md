@@ -18,6 +18,12 @@
 
 * Upload takes place from the same device that will run the download. (SUBJECT TO CHANGE)
 
+* During tests files are downloaded over HTTP. The files and are downloaded via:
+  * Swarm: local `bee` node. URL for download: http://localhost:1633/bzz/{hash}
+  * IPFS: local `kubo` gateway: URL for download: http://ipfs.localhost:8080/ipfs/{hash}
+  * Arweave: arweave.net gateway (remote): URL for download: https://arweave.net/{dataTxId}
+  * S3: https://{bucket}.{location}.your-objectstorage.com/{downloadURI}
+
 * File sizes:
 
   ```
