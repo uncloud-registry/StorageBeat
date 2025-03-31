@@ -8,43 +8,46 @@ config:
     swarm:
       target: http://localhost:1633/bzz
       http:
-        timeout: 1000
+        timeout: 10000
       variables:
         nonExisting: '22cbb9cedca08ca8d50b0319a32016174ceb8fbaa452ca5f0a77b804109baa00/'
     arweave:
       target: https://arweave.net
       http:
-        timeout: 100
+        timeout: 10000
       variables:
-        # existing: '8mbU6jvUFqj07RUFOeZBLqGvyIzi7Pjpu0JLP-nHOk8'
         nonExisting: '8mbU6jvUFqj07RUFOeZBLqGvyIzi7Pjpu0JLP-nHOk7'
     ipfs:
       target: http://ipfs.localhost:8080/ipfs
       http:
-        timeout: 100
+        timeout: 10000
       variables:
-        # existing: 'bafybeif64kjrj63f4v43fskfntyvz2x5qapwmcct456hjqtu56tdovcd54'
-        # existing: 'bafybeigccimv3zqm5g4jt363faybagywkvqbrismoquogimy7kvz2sj7sq/1 - Barrel - Part 1.png'
         nonExisting: 'bafybeienhfkaupae32imtef6mtxi4el6noeczjlodeonbuwyfrftoidrwq'
-        # nonExisting: 'bafybeigccimv3zqm5g4jt363faybagywkvqbrismoquogimy7kvz2sj7sq/test'
     s3:
       target: https://shtuka.hel1.your-objectstorage.com
       http:
-        timeout: 100
+        timeout: 10000
       variables:
         nonExisting: 'test_files/deleted_file?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=GPRCEP0UFF1UWT5ARD9T%2F20250310%2Fhel1-prod1%2Fs3%2Faws4_request&X-Amz-Date=20250310T092937Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=77bde07d3274aa379ab0e50416cbcfea8e5ca0c2f6d57b20cff367b6db6e4501'      
   phases:
-    - duration: 10
+    - duration: 100
       arrivalRate: 1
+      maxVusers: 20
   plugins:
       # ensure: {}
       expect: {}
       apdex: {}
       metrics-by-endpoint:
         useOnlyRequestNames: true
+  processor: './processor.js'
 scenarios:
   - name: "Download file"
+    afterScenario: 'finishDownload'
     flow:
+      - loop:
+          - think: 1
+        whileTrue: 'userLimitReached'
       - get:
+          beforeRequest: 'startDownload'
           url: '/{{existing}}'
           name: "Existing file"

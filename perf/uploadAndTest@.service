@@ -1,9 +1,9 @@
 [Unit]
-Description=Upload random data to Swarm and run download test
+Description=Upload random data and run benchmark: %I
 
 [Service]
 WorkingDirectory=WORKDIR
-ExecStart=~/uploadAndTest.sh ARGS
+ExecStart=WORKDIR/uploadAndTest.sh %I
 Restart=on-failure
 RestartSec=10s
 StartLimitInterval=5min
