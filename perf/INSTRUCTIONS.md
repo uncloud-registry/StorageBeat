@@ -50,7 +50,7 @@ targets=("ipfs" "arweave" "swarm" "s3")
 loads=("100 100 K" "100 1 M" "100 10 M" "1 100 M")
 loadsArweave=("10 100 K" "100 100 K" "10 1 M" "1 10 M")
 ```
-Note that Arweave has different workloads (as per test design [parameters](parameters.md)). Currently the number of workloads for Arweave and other files must be the same for the script to run correctly.
+Note that Arweave has different workloads (as per test design [spec](spec.md)). Currently the number of workloads for Arweave and other files must be the same for the script to run correctly.
 
 # Artillery test scripts
 There are 3 different test scripts for Artillery:
@@ -58,9 +58,14 @@ There are 3 different test scripts for Artillery:
 `StorageBeatLimit.yml` - Limits the concurrency to maximum 5 downloads at the same time. Generates less load still provding concurency.
 `StorageBeatSeq.yml` - No concurrency, all the files are downloaded sequentially by one user
 
-To change the script modify `TESTSCRIPT` variable in `./uploadAndTest.sh`
-To change the rate of users arriving modify the `duration` and `arrivalCount` parameters in `OVERRIDES` variable:
-`--overrides '{"config":{"phases":[{"duration":'$((FILENUM*2))',"arrivalCount":'${FILENUM}'}]}}`
-For sequenctial test `OVERRIDES` variable should be empty
+To change the script modify `TESTSCRIPT` variable in `./uploadAndTest.sh`.
+To change the rate of users arriving modify the `duration` and `arrivalCount` parameters in `OVERRIDES` variable.
+For sequential test `OVERRIDES` variable must be empty.
+
+To run Artiller script by itself:
+```
+artillery run -e $TARGET -v '{"payload":'$PAYLOAD_CSV'"}' --overrides '{"config":{"phases":[{"duration":'$DURATION',"arrivalCount":'$FILENUM'}]}}' $TESTSCRIPT
+```
+where `$TARGET` is in (ipfs, swarm, arweave, s3), `$PAYLOAD_CSV` is a relative path to payload CSV file, `$DURATION` is time is seconds for how long Artillery will generate new users (default is 2*FILENUM), `$FILENUM` is number of files to be downloaded (usualy corresponds to the number of entries in payload file). User arrival will be `$FILENUM/$DURATION` users per second. `$TESTSCRIPT` is one of the scripts mentioned above. For `StorageBeatSeq.yml` `--overrides` part should be removed from the command.
 
 
