@@ -59,6 +59,20 @@
 
 * Requests are made concurrently with a spacing of [1s, 10s]
 
+## Upload specifics
+### IPFS/Pinata
+Files are uploaded using Pinata CLI
+Garbage collector is run every time after all files are uploaded
+### Swarm
+Files are uploaded using swarm-cli
+Least used Stamp is used for each upload
+### Arweave
+For the ease of uploads Adrive is used instead of raw Arweave. This shouldn't affect the download benchmark since the files are stored (and later downloaded)
+Files are uploaded using the ardrive-cli into the same (configured) folder. Turbo is used for uploads as it allows to use credits instead of AR tokens
+### S3
+Files are uploaded using MinIO CLI
+To avoid using authentication in temporarly public download links (valid 2 hours) are generated and used as a payload
+
 ## Deployment
 
 * All workloads are run from one cloud instance in Europe and one in Asia. We use Hetzner Cloud and Fedora 41.
