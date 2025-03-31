@@ -43,11 +43,7 @@ scenarios:
   - name: "Download file"
     flow:
       - loop:
-        - log: '{{ $loopElement.existing }}'
         - get:
             url: '/{{ $loopElement.existing }}'
             name: "Existing file"
         over: fileIds
-      - get:
-          url: '/{{nonExisting}}'
-          name: "Non existing file"

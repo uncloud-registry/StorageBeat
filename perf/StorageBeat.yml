@@ -45,10 +45,6 @@ config:
 scenarios:
   - name: "Download file"
     flow:
-      - log: '{{ existing }}'
       - get:
           url: '/{{existing}}'
           name: "Existing file"
-      - get:
-          url: '/{{nonExisting}}'
-          name: "Non existing file"
