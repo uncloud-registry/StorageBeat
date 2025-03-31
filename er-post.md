@@ -8,11 +8,11 @@ The target audience is a sophisticated user (e.g. CTO of a web3 or web3-curious 
 
 * The decentralised storage landscape is highly fragmented.
 * Early misunderstandings about what existing storage infrastructure, especially IPFS, actually offer persist.
-  The most well-known decentralised storage options are targeted only at niche use cases, such as "permanent" storage or archival. Similarly persistent is this fact does not seem to be that widely understood in the Ethereum (or general Web3) community.
-* The core offerings of decentralised storage are blockchain based payment and storage contract management, cryptographically verifiabile service, and provider diversity.
+  The most well-known decentralised storage options are targeted only at niche use cases, such as "permanent" storage or archival.
+* The core offerings of decentralised storage are blockchain based payment and storage contract management, cryptographically verifiable service, and provider diversity.
 * The Ethereum and decentralised storage ecosystem would benefit from a systematic methodology for measuring and comparing these features. For example, how diverse is the provider landscape? What exactly does the storage proof system prove? What exactly does "availability" mean? Despite major effort and investment in the field of *Data Availability,* the community still does not seem to agree on a definition of what it means for data to be *available*.)
 * Moreover, to facilitate migration from (or hybrid usage with) traditional cloud services, where possible common metrics or features should be defined for apples-to-apples comparisons.
-* This post is an overview of the elements the StorageBeat team feel should enter into an evaluation framework for decentralised storage. More in-depth exposition and technical details on each element can be found in our GitHub repository: https://github.com/uncloud-registry/StorageBeat/tree/main/notes
+* This post is an overview of the elements the StorageBeat team feel should enter into an evaluation framework for decentralised storage. More in-depth exposition and technical details on each element can be found in the notes directory of our GitHub repository: https://github.com/uncloud-registry/StorageBeat/tree/main/notes
 
 ## Costs
 
@@ -40,11 +40,11 @@ In our experiments, we used the open-source tool [Artillery](https://github.com/
 
 ## Risk
 
-Each storage service is associated with a set of risks that something will impair our use of the service in the future. Weighing up these risks is part of the job of selecting which service to use. We therefore introduce the elements of a risk framework for storage services. We attempt a rough classification of risks, risk measurement, and mitigation strategies in centralised and decentralised storage services. Since risk analysis requires us to consider not only what service ought to be delivered, but also all the reasons that it might not, risk assessment actually comprises the bulk of the work of evaluating storage services. 
+Each storage service is associated with a set of risks that something will impair our use of the service or increase our costs in the future. Weighing up these risks is part of the job of selecting which service to use. Part of our job, then, is to build out a risk framework for storage services. Since risk analysis requires us to consider not only what service ought to be delivered, but also all the reasons that it might not, this risk framework actually comprises the bulk of the task.
 
 Since the core offering of decentralised storage is the ability to mitigate counterparty risks through **provider diversification**, a good risk framework is particularly essential to communicating its selling points vis-à-vis tradcloud storage.
 
-In terms of the functioning of the storage service itself, we must consider the following questions:
+We attempt a rough classification of risks, risk measurement, and mitigation strategies in centralised and decentralised storage services.  In terms of the functioning of the storage service itself, we must consider the following questions:
 
 * Will I be able to use the service in the future?
 * Will the service function correctly in the future?
