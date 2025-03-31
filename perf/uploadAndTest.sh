@@ -40,7 +40,6 @@ upload() {
       UPLOAD="mc share download --expire 2h $S3_PATH/random_data_file_${2} | grep Share | sed 's/.*\/\/[^\/]*\///'"
       ;;
     ipfs)
-      ipfs repo gc > /dev/null
       UPLOAD="pinata upload tests/random_data_file_${2} | jq -r '.cid'"
       ;;
     *)
@@ -61,6 +60,11 @@ for ((i=1; i<=FILENUM; i++)); do
 done
 
 cp tests/current_payload_${BMARK}.csv tests/payload_${BMARK}_${TIMESTAMP}.csv
+
+# If target is IPFS run garbage collector to make sure the files won't be dowloaded from cache
+if [ $TARGET == "ipfs" ]; then
+  ipfs repo gc > /dev/null
+fi
 
 if [ $TARGET != "dryrun" ]; then
   systemd-run --user --on-active=3600 -d artillery run -o tests/report_${BMARK}_${TIMESTAMP}.json -q -e $TARGET -v '{"payload":"tests/current_payload_'${BMARK}'.csv"}' ${OVERRIDES} $TESTSCRIPT 
