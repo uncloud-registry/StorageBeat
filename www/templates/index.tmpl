@@ -14,13 +14,12 @@
         <h1>StorageBeat<sup>⁂</sup></h1>
         <div>Decentralized storage index</div>
     </header>
+    <main>
     <table border="1" id="table">
         <thead>
             <tr>
                 {{range $index, $heading := .Headings}}
-                {{if lt $index 10}}
                 <th>{{$heading}}</th>
-                {{end}}
                 {{end}}
             </tr>
         </thead>
@@ -28,14 +27,13 @@
             {{range $index, $row := .TableData}}
             <tr>
                 {{range $colIndex, $value := $row}}
-                {{if lt $colIndex 10}}
                 <td>{{$value}}</td>
-                {{end}}
                 {{end}}
             </tr>
             {{end}}
         </tbody>
     </table>
+    </main>
         <script src="./sort.js"></script>
 </body>
 </html>
