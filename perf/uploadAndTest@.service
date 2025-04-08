@@ -1,0 +1,13 @@
+[Unit]
+Description=Upload random data and run benchmark: %I
+
+[Service]
+WorkingDirectory=WORKDIR
+ExecStart=WORKDIR/uploadAndTest.sh %I
+Restart=on-failure
+RestartSec=10s
+StartLimitInterval=5min
+StartLimitBurst=3
+
+[Install]
+WantedBy=default.target

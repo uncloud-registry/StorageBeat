@@ -11,26 +11,29 @@
 </head>
 <body>
    <header>
-        <h1>StorageBeat</h1>
+        <h1>StorageBeat<sup>⁂</sup></h1>
         <div>Decentralized storage index</div>
     </header>
+    <main>
     <table border="1" id="table">
         <thead>
             <tr>
-                <th>#</th>
-                <th>Name</th>
+                {{range $index, $heading := .Headings}}
+                <th>{{$heading}}</th>
+                {{end}}
             </tr>
         </thead>
         <tbody>
             {{range $index, $row := .TableData}}
             <tr>
-                <td>{{$index}}</td>
-                <td>{{index $row 0}}</td>
+                {{range $colIndex, $value := $row}}
+                <td>{{$value}}</td>
+                {{end}}
             </tr>
             {{end}}
         </tbody>
     </table>
+    </main>
         <script src="./sort.js"></script>
 </body>
-
 </html>

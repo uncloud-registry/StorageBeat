@@ -1,0 +1,6 @@
+#!/bin/bash
+
+ARDRIVE_WALLET=
+ARDRIVE_FOLDER=
+S3_PATH=
+BEE_URL=
