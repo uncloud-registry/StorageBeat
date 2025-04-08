@@ -10,7 +10,6 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
-        run_install: false
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
