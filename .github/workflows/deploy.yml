@@ -1,0 +1,29 @@
+name: Deploy on IPFS
+on: [push, workflow_dispatch]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - name: Install Golang
+        uses: actions/setup-go@v5
+      - name: Install blumen
+        run: pnpm i -g blumen@0.14.2
+
+      - name: Build the website
+        run: cd www && go run main.go && cp styles/style.css ./out/ && cp js/sort.js ./out/
+      
+      - name: Test a path
+        run: echo $PWD
