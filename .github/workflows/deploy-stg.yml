@@ -1,0 +1,58 @@
+name: IPFS Deploy (Staging)
+on:
+  push:
+    paths:
+      - 'www/**'
+      - 'data/**'
+      - '.github/workflows/**'
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install Golang
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.24'
+
+      - name: Cache Go binary
+        uses: actions/cache@v3
+        id: binary-cache
+        with:
+          path: ./www/storagebeat
+          key: ${{ runner.os }}-go1.24-binary-${{ hashFiles('www/main.go') }}
+          restore-keys: |
+            ${{ runner.os }}-go1.24-binary-
+
+      - name: Build binary if cache miss
+        if: steps.binary-cache.outputs.cache-hit != 'true'
+        run: cd www && go build -o storagebeat
+
+      - name: Install blumen
+        run: bun i -g blumen@0.14.2
+
+      - name: Build website
+        run: |
+          cd www
+          ./storagebeat
+          cp styles/style.css ./out/
+          cp js/sort.js ./out/
+  
+      - name: Deploy to Storacha with Blumen
+        run: |
+          output=$(blumen deploy ./www/out)
+          echo "$output"
+          cid=$(echo "$output" | grep -oP 'Root CID: \K\S+')
+          echo "CID=$cid" >> $GITHUB_OUTPUT
+        env:
+          BLUMEN_STORACHA_PROOF: ${{ secrets.BLUMEN_STORACHA_PROOF }}
+          BLUMEN_STORACHA_TOKEN: ${{ secrets.BLUMEN_STORACHA_TOKEN }}
