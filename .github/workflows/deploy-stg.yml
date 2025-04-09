@@ -1,7 +1,6 @@
 name: IPFS Deploy (Staging)
 on:
-  pull_request:
-    types: [synchronize]
+  push:
     paths:
       - 'www/**'
       - 'data/**'
