@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StorageBeat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+   <header>
+        <h1>StorageBeat<sup>⁂</sup></h1>
+        <div>Decentralized storage index</div>
+    </header>
+    <main>
+    <table border="1" id="table">
+        <thead>
+            <tr>
+                {{range $index, $heading := .Headings}}
+                <th>{{$heading}}</th>
+                {{end}}
+            </tr>
+        </thead>
+        <tbody>
+            {{range $index, $row := .TableData}}
+            <tr>
+                {{range $colIndex, $value := $row}}
+                <td>{{$value}}</td>
+                {{end}}
+            </tr>
+            {{end}}
+        </tbody>
+    </table>
+    </main>
+        <script src="./sort.js"></script>
+</body>
+</html>
