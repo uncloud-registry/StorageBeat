@@ -5,6 +5,7 @@ on:
     paths:
       - 'www/**'
       - 'data/**'
+  workflow_dispatch: {}
 
 jobs:
   deploy:

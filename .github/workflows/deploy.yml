@@ -5,7 +5,7 @@ on:
     paths:
       - 'www/**'
       - 'data/**'
-  workflow_dispatch:
+  workflow_dispatch: {}
 
 jobs:
   deploy:
@@ -63,10 +63,17 @@ jobs:
         with:
           switches: -avzr --delete
           path: out.car
-          remote_path: /srv/
+          remote_path: /srv/car/
           remote_host: ${{ secrets.REMOTE_HOST }} # Remote server IP/hostname
           remote_user: ${{ secrets.REMOTE_USER }} # Remote server username
           remote_key: ${{ secrets.REMOTE_KEY }} # SSH private key
+      - name: IPFS DAG import to Kubo
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.REMOTE_KEY }}
+          script: touch /srv/car/test
   pin:
     runs-on: ubuntu-latest
     needs: deploy
