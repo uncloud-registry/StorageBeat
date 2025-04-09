@@ -1,5 +1,11 @@
-name: Deploy on IPFS
-on: [push, workflow_dispatch]
+name: Deploy on IPFS (Prod)
+on:
+  push:
+    branches: main
+    paths:
+      - 'www/**'
+      - 'data/**'
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -40,5 +46,43 @@ jobs:
           ./storagebeat
           cp styles/style.css ./out/
           cp js/sort.js ./out/
+  
       - name: Pack the website with Blumen
-        run: blumen pack ./www/out --dist .
+        id: pack_blumen  # <- Required for step outputs
+        run: |
+          PACK_OUTPUT=$(blumen pack ./www/out --dist . 2>&1)
+          echo "$PACK_OUTPUT"
+          ROOT_CID=$(echo "$PACK_OUTPUT" | grep -oP 'Root CID: \K\S+')
+          
+          # Set as BOTH an env var (for steps) AND a step output (for jobs)
+          echo "CAR_CID=$ROOT_CID" >> $GITHUB_ENV
+          echo "cid=$ROOT_CID" >> $GITHUB_OUTPUT  # <- Step output
+      
+      - name: Upload the CAR file via Rsync
+        uses: burnett01/rsync-deployments@7.0.2
+        with:
+          switches: -avzr --delete
+          path: out.car
+          remote_path: /srv/
+          remote_host: ${{ secrets.REMOTE_HOST }} # Remote server IP/hostname
+          remote_user: ${{ secrets.REMOTE_USER }} # Remote server username
+          remote_key: ${{ secrets.REMOTE_KEY }} # SSH private key
+  pin:
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Install blumen
+        run: bun i -g blumen@0.14.2
+      - name: Pin to Pinata
+        run: blumen pin ${{ needs.deploy.outputs.cid }}
+        env:
+          BLUMEN_PINATA_TOKEN: ${{ secrets.BLUMEN_PINATA_TOKEN }}
+          BLUMEN_STORACHA_PROOF: ${{ secrets.BLUMEN_STORACHA_PROOF }}
+          BLUMEN_STORACHA_TOKEN: ${{ secrets.BLUMEN_STORACHA_TOKEN }}
