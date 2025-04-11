@@ -8,7 +8,10 @@
 
 ## Performance Metrics
 
-* **100M (MiB/s).** Mean download speed of a 100MiB workload, reported at 50th quantile. An estimator of *steady state throughput.*
+* **100M (KiB/s).** Mean download speed of a 100MiB workload, reported at 50th quantile. An estimator of *steady state throughput.*
+  
+  *For cost reasons we didn't carry out this experiment for Arweave.*
+
 * **100K (ms).** Total session time of a 100KiB workload, reported at 50th, 95th, and 99th quantiles. An estimator of *latency* a.k.a. *time to first byte.*
 
 ## Risks
