@@ -4,3 +4,4 @@ proof_bytes.txt
 
 perf/tests/*
 perf/upload_env.sh
+www/storagebeat
