@@ -16,15 +16,15 @@ To illustrate how such elements can be used in practice, we've gathered data on 
 
 Costs of using a storage service can be roughly divided into explicit costs, which are prices quoted by the service provider, and implicit, which are additional costs incurred by the customer's use of the service. For this version of StorageBeat, we consider only explicit prices.
 
-Our objective is to be able to compare prices for services from a disparate playing field: distributed ecosystems, centralized storage providers, blockchains, and so on. The methods of quoting prices and structuring payments are correspondingly diverse, complicating any attempt at direct comparison. Usage-based pricing systems mean the customer must forecast their data storage and transit needs in order to estimate costs. Prices for decentralised services must somehow be aggregated from their diverse network of providers.
+Our objective is to be able to compare prices for services from a disparate playing field: distributed ecosystems, centralized storage providers, blockchains, and so on. The methods of quoting prices and structuring payments are correspondingly diverse, complicating any attempt at direct comparison. Usage-based pricing systems mean the customer must forecast their data storage and transit needs in order to estimate costs. Prices for decentralised services must somehow be aggregated from their diverse network of providers. Here, we discuss some of the dimensions on which pricing schemes are heterogeneous.
 
-**Fixed and elastic pricing.** Subscription prices can be fixed, in which case the usage allowance forms part of the service definition and the price is quoted in units of [currency]/[time], or usage-based. 
+**Fixed and usage-based pricing.** Subscription prices can be fixed, in which case the usage allowance forms part of the service definition and the price is quoted in units of [currency]/[time], or usage-based. 
 
-Elastic services can quote a price for each resource. Typical resource fees are **capacity rents**, charged for maintaining data at rest and quoted in units of [currency]/[capacity]•[time], eg $/GiB•mo, and **egress fees**, charged for retrieving data from the service and quoted in units of [currency]/[capacity]. 
+Other services quote a price for each resource. Typical resource fees are **capacity rents**, charged for maintaining data at rest and quoted in units of [currency]/[capacity]•[time], e.g. $/GiB•mo, and **egress fees**, charged for retrieving data from the service and quoted in units of [currency]/[capacity]. All of the decentralised storage services we have seen quote capacity rents; a few also allow for egress (or *retrieval*) fees.
 
 **Banded Pricing**. Many tradcloud services charge for resource usage in a **banded** system.  For example, a client may pay nothing for the first $100$GiB of egress and a fixed rate $p$ per GiB for subsequent usage. Exotic variants also exist: for example, Backblaze calculates its bands in fixed proportion to the amount of capacity used. We don't know any examples of banded price quotes in decentralised storage.
 
-**Marketplaces.** In some decentralised ecosystems, notably Filecoin and Sia, each peer must quote competitive prices for capacity and egress.
+**Marketplaces.** In some decentralised ecosystems, notably Filecoin and Sia, each peer must quote competitive prices for capacity and egress. It is therefore not meaningful to talk of "the price" of Filecoin and Sia storage, though it can still be useful to summarise the marketplace with a "market price" construction.
 
 **Permanent storage.** Some storage services quote a single upfront payment for "permanent" or "lifetime" data storage, with the latter term appearing in tradcloud and the former appearing on decentralised platforms. Compared to tradcloud, such quotes seem to be more common in decentralised storage. The price of such a service is expressed in units of [currency]/[capacity]. For the purposes of comparison with services priced in terms of capacity rent, this upfront payment must be amortised to give quantities in the usual units of [currency]/[capacity]•[time]. In StorageBeat, we use a straight line method to amortise and give a **normalised capacity rent** for lifetime contracts. More generally, clients with concrete use cases should amortise over the period of expected usage of the service.[^risk]
 
@@ -74,7 +74,7 @@ If we aren't able to use the service, the service is *unavailable.* Unavailabili
 
 The risk of global outages can be mitigated in the following ways:
 
-- **SLA.** A service-level agreement provides an indemnity for some type of service failure. Tradcloud services typically offer compensation for an *error rate* exceeding a certain limit, e.g. 99% in a five minute window.[^s3-sla][^sla.md]
+- **SLA.** A service-level agreement provides a definition of the service and often an indemnity for some type of service failure. Tradcloud services typically offer compensation for an *error rate* exceeding a certain limit, e.g. 99% in a five minute window.[^s3-sla][^sla.md]
 
 - **Survival analysis.** Global, permanent outages arise when a service provider ceases operations. To mitigate this, estimate the survival probability of each service provider over the desired service period and allocate to providers with better scores.
 
