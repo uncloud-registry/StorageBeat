@@ -37,7 +37,7 @@ jobs:
       - name: Pack the website with Blumen
         id: pack_blumen  # <- Required for step outputs
         run: |
-          output=$(deno -A npm:blumen pack ./www/_site)
+          output=$(deno -A npm:blumen pack ./www/_site --dist .)
           echo "$output"
           cid=$(echo "$output" | grep -oP 'Root CID: \K\S+')
           echo "CID=$cid" >> $GITHUB_OUTPUT

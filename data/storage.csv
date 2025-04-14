@@ -1,28 +1,23 @@
-﻿Service,Capacity Rent (Normalized),Capacity Rent (Quoted),Explicit Expiry,Steady State Throughput,Latency,Consistency model,Estimated loss rate,SLA,Storage proofs
-Wesendit-business,0.00150,,,,,,,,
-Swarm,0.00164,,,,,,,,
-Storj,0.00400,,,,,,,,
-Dropbox,0.00500,,,,,,,,
-Wesendit-business,0.00598,,,,,,,,
-Celestia-Superblobs,0.00675,,,,,,,,
-Akord-tier1,0.00750,,,,,,,,
-Akord-tier2,0.00750,,,,,,,,
-Scaleway,0.01538,,,,,,,,
-Amazon S3,0.02300,,,,,,,,
-Delta (SIA?),0.02500,,,,,,,,
-Filebase-pro,0.02500,,,,,,,,
-Akord-tier1,0.03500,,,,,,,,
-Arweave-Akord,0.03500,,,,,,,,
-Pinata,0.04000,,,,,,,,
-Pinata-tier2,0.04000,,,,,,,,
-Filecoin-web3.storage,0.05000,,,,,,,,
-Celestia-blobs,0.06092,,,,,,,,
-Infura,0.08000,,,,,,,,
-Akord-tier2,0.09900,,,,,,,,
-Filecoin-web3.storage,0.10000,,,,,,,,
-Scaleway-view2,0.38462,,,,,,,,
-ICP,0.44583,,,,,,,,
-Wesendit-basic,0.98000,,,,,,,,
-Scaleway-view2,7.69231,,,,,,,,
-Ethereum State,15.58333,,,,,,,,
-Ethereum State,1400.00000,,,,,,,,
+Service Name,Capacity rent,Capacity rent (normalised) ($/GB-mo),Transit price,100M (KiB/s),100K (ms),Consistency model,Estimated loss rate,SLA,Storage proofs
+Hetzner Object Storage (Helsinki),"Free up to 1 TB
+€0.0067/TB-hour",0.0052,"Free up to 1.5GB/h
+€1/TB",No data,"p50: 151
+p95: 209
+p99: 297",No data,No data,No data,None
+Amazon S3 Standard,$0.023/GB-month,0.023,"0/GB*
+*API priced per 1K calls",No data,No data,Strong,0.000000001 (self-reported),Availability (99%),None
+IPFS/Pinata,"$20/month for 1TB
+$0.07/GB-month",0.07,"$20/month for 500GB
+$0.1/GB",p50: 1280,"p50: 1249
+p95: 2508589
+p99: 3476379",Immutable,No data,No data,None
+EthSwarm,"25499 PLUR/chunk-block*",0.047,No data,"p50: 776
+p95: 552
+p99: 170","p50: 213
+p95: 375
+p99: 5698","Immutable (content-addressed)
+Exotic (feed)",No data,None,Sampling
+arweave.net/Arweave,"1.77 AR/GB
+*https://ar-fees.arweave.dev",0.16,$0,No data,"p50: 963 
+p95: 105 
+p99: 1075",Immutable,No data,None,SPoRA

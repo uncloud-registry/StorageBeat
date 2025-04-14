@@ -10,7 +10,8 @@ const headings = data.shift()!
 
 export default function Layout({ title }: { title: string }) {
   return `<main>
-    <table border="1" id="table">
+   <div class="table">
+ <table border="1" id="table">
         <thead>
             <tr>
                 ${headings.map((heading) => `<th>${heading}</th>`).join('')}
@@ -24,6 +25,7 @@ export default function Layout({ title }: { title: string }) {
   }
         </tbody>
     </table>
+   </div>
     <script src="/js/sort.js"></script></main>
     `
 }

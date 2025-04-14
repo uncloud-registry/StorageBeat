@@ -6,7 +6,7 @@
 body {
   margin: 0 auto;
   width: 100%;
-  max-width: 80vw;
+  max-width: 85vw;
   background-color: var(--bg);
   font-family:
     'Rubik',
@@ -36,13 +36,15 @@ h1 sup {
 }
 
 main {
-  width: 80vw;
-  max-height: 70vh;
   height: 100%;
   overflow-x: scroll;
   border: 1px solid #676d87;
   border-radius: 8px;
   box-shadow: -5px 0 30px 0px rgba(63, 59, 79, 0.75);
+}
+
+.table {
+  height: 60vh;
 }
 
 table {
@@ -51,14 +53,24 @@ table {
 
 table, table th, table td {
   border: 1px solid #3d4155;
+
 }
 
 table tr, table td, table th {
   padding: 0.5rem;
+
 }
 
 table th {
   cursor: pointer;
+}
+
+table tr:has(th) {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: rgba(63 59 79 / 75%);
+  z-index: 1;
 }
 
 header {
@@ -70,4 +82,21 @@ header {
 
 header h1 {
   font-size: clamp(2rem, 0.8rem + 7vw, 4rem);
+}
+
+nav {
+  padding: 1rem 0;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  transition-duration: 250ms;
+  color: #676d87;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: var(--fg)
 }
