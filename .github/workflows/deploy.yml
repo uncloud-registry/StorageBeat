@@ -44,12 +44,10 @@ jobs:
       - name: Build website
         run: |
           cd www
-          ./storagebeat
-          cp styles/style.css ./out/
-          cp js/sort.js ./out/
+          make
   
       - name: Pack the website with Blumen
-        id: pack_blumen  # <- Required for step outputs
+        id: pack_blumen
         run: |
           PACK_OUTPUT=$(blumen pack ./www/out --dist . 2>&1)
           echo "$PACK_OUTPUT"

@@ -1,4 +1,4 @@
-name: IPFS Deploy (Staging)
+name: Deploy on IPFS (Staging)
 on:
   push:
     paths:
@@ -43,9 +43,7 @@ jobs:
       - name: Build website
         run: |
           cd www
-          ./storagebeat
-          cp styles/style.css ./out/
-          cp js/sort.js ./out/
+          make
   
       - name: Deploy to Storacha with Blumen
         run: |
