@@ -32,7 +32,7 @@ jobs:
       - name: Build website
         run: |
           cd www
-          lume build
+          deno task build
   
       - name: Pack the website with Blumen
         id: pack_blumen  # <- Required for step outputs

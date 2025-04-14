@@ -29,7 +29,7 @@ jobs:
       - name: Build website
         run: |
           cd www
-          lume build
+          deno task build
   
       - name: Deploy to Storacha with Blumen
         run: |
