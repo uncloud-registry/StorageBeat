@@ -22,11 +22,12 @@ jobs:
           deno-version: v2.x
       - name: Install dependencies
         run: cd www && deno install --allow-scripts
-      - name: Cache Deno dependencies 
-        uses: actions/cache@v4
+      - uses: actions/cache@v4
         with:
-          path: ${{ env.DENO_DIR }}
-          key: ${{ hashFiles('www/deno.lock') }}
+          path: |
+            ~/.deno
+            ~/.cache/deno
+          key: ${{ runner.os }}-deno-${{ hashFiles('**/deps.ts') }}
 
       - name: Build website
         run: |
