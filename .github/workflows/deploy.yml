@@ -41,6 +41,7 @@ jobs:
           echo "$output"
           cid=$(echo "$output" | grep -oP 'Root CID: \K\S+')
           echo "CID=$cid" >> $GITHUB_OUTPUT
+          echo "$output" >> $GITHUB_STEP_SUMMARY
       
       - name: Upload the CAR file via Rsync
         uses: burnett01/rsync-deployments@7.0.2

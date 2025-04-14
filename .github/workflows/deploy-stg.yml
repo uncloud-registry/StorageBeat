@@ -37,6 +37,7 @@ jobs:
           echo "$output"
           cid=$(echo "$output" | grep -oP 'Root CID: \K\S+')
           echo "CID=$cid" >> $GITHUB_OUTPUT
+          echo "$output" >> $GITHUB_STEP_SUMMARY
         env:
           BLUMEN_STORACHA_PROOF: ${{ secrets.BLUMEN_STORACHA_PROOF }}
           BLUMEN_STORACHA_TOKEN: ${{ secrets.BLUMEN_STORACHA_TOKEN }}
