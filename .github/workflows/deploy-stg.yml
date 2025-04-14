@@ -14,42 +14,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Bun
-        uses: oven-sh/setup-bun@v2
+      - uses: denoland/setup-deno@v2
         with:
-          bun-version: latest
-
-      - name: Install Golang
-        uses: actions/setup-go@v5
+          deno-version: v2.x
+      - uses: Install dependencies
+        run: deno install --allow-scripts
+      - name: Cache Deno dependencies 
+        uses: actions/cache@v4
         with:
-          go-version: '1.24'
-
-      - name: Cache Go binary
-        uses: actions/cache@v3
-        id: binary-cache
-        with:
-          path: ./www/storagebeat
-          key: ${{ runner.os }}-go1.24-binary-${{ hashFiles('www/main.go') }}
-          restore-keys: |
-            ${{ runner.os }}-go1.24-binary-
-
-      - name: Build binary if cache miss
-        if: steps.binary-cache.outputs.cache-hit != 'true'
-        run: cd www && go build -o storagebeat
-
-      - name: Install blumen
-        run: bun i -g blumen@0.14.2
+          path: ${{ env.DENO_DIR }}
+          key: ${{ hashFiles('www/deno.lock') }}
 
       - name: Build website
         run: |
           cd www
-          ./storagebeat
-          cp styles/style.css ./out/
-          cp js/sort.js ./out/
+          lume build
   
       - name: Deploy to Storacha with Blumen
         run: |
-          output=$(blumen deploy ./www/out)
+          output=$(deno -A npm:blumen deploy ./www/_site)
           echo "$output"
           cid=$(echo "$output" | grep -oP 'Root CID: \K\S+')
           echo "CID=$cid" >> $GITHUB_OUTPUT
