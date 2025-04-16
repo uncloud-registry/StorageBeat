@@ -1,0 +1,4 @@
+Performance trials were executed from a Hetzner data centre in Helsinki.
+EthSwarm capacity rent retrieved from https://www.ethswarm.org/get-bzz.
+Arweave capacity price retrieved from https://ar-fees.arweave.dev/.
+AWS S3 also charges per 1,000 API calls.

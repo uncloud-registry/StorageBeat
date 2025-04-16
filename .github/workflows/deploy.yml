@@ -19,7 +19,7 @@ jobs:
 
       - uses: denoland/setup-deno@v2
         with:
-          deno-version: v2.x
+          deno-version: v2.2.2
       - name: Install dependencies
         run: cd www && deno install --allow-scripts
       - uses: actions/cache@v4
@@ -37,10 +37,11 @@ jobs:
       - name: Pack the website with Blumen
         id: pack_blumen  # <- Required for step outputs
         run: |
-          output=$(deno -A npm:blumen pack ./www/_site)
+          output=$(deno -A npm:blumen pack ./www/_site --dist .)
           echo "$output"
           cid=$(echo "$output" | grep -oP 'Root CID: \K\S+')
           echo "CID=$cid" >> $GITHUB_OUTPUT
+          echo "$output" >> $GITHUB_STEP_SUMMARY
       
       - name: Upload the CAR file via Rsync
         uses: burnett01/rsync-deployments@7.0.2
@@ -64,13 +65,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Set up Bun
-        uses: oven-sh/setup-bun@v2
+      - uses: denoland/setup-deno@v2
         with:
-          bun-version: latest
-      - name: Install blumen
-        run: bun i -g blumen@0.14.2
+          deno-version: v2.x
+      - name: Install dependencies
+        run: cd www && deno install --allow-scripts
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.deno
+            ~/.cache/deno
+          key: ${{ runner.os }}-deno-${{ hashFiles('**/deps.ts') }}
       - name: Pin to Pinata
         run: deno -A npm:blumen pin ${{ needs.deploy.outputs.cid }}
         env:
