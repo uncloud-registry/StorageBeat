@@ -1,4 +1,4 @@
-name: IPFS Deploy (Staging)
+name: Deploy on IPFS (Staging)
 on:
   push:
     paths:
