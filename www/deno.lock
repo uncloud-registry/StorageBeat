@@ -35,6 +35,7 @@
     "jsr:@std/yaml@^1.0.5": "1.0.5",
     "npm:@js-temporal/polyfill@0.4.4": "0.4.4",
     "npm:@types/estree@1.0.6": "1.0.6",
+    "npm:blumen@*": "0.14.4_viem@2.26.5__ws@8.18.1",
     "npm:blumen@0.14.4": "0.14.4_viem@2.26.5__ws@8.18.1",
     "npm:blumen@~0.14.4": "0.14.4_viem@2.26.5__ws@8.18.1",
     "npm:estree-walker@3.0.3": "3.0.3",
