@@ -19,7 +19,7 @@ export default function Layout() {
         <tbody>
             ${
     data.map((row) =>
-      `<tr>${row.map((value) => `<td>${value}</td>`).join('')}</tr>`
+      `<tr>${row.map((value) => `<td>${value.replace('\n', '<br>')}</td>`).join('')}</tr>`
     ).join('')
   }
         </tbody>

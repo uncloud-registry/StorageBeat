@@ -49,6 +49,7 @@ main {
 }
 
 table {
+  width: 100vw;
   border-collapse: collapse;
 }
 
