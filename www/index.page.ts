@@ -1,14 +1,13 @@
 import { parse } from 'jsr:@std/csv/parse'
 
-export const title = 'StorageBeat'
-
 export const layout = 'layout.vto'
 
-const csvFile = await Deno.readTextFile('../data/storage.csv')
-const data = parse(csvFile)
+const data = parse(await Deno.readTextFile('../data/storage.csv'))
 const headings = data.shift()!
 
-export default function Layout({ title }: { title: string }) {
+const references = parse(await Deno.readTextFile('../data/references.csv'))
+
+export default function Layout() {
   return `<main>
    <div class="table">
  <table border="1" id="table">
@@ -26,6 +25,9 @@ export default function Layout({ title }: { title: string }) {
         </tbody>
     </table>
    </div>
+     <ol>
+    ${references.map((row) => `<li>${row.join(', ')}</li>`).join('')}
+    </ol>
     <script src="/js/sort.js"></script></main>
     `
 }
