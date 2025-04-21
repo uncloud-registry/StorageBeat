@@ -3,9 +3,9 @@ on:
   push:
     branches: main
     paths:
-      - 'www/**'
-      - 'data/**'
-      - '.github/workflows/**'
+      - "www/**"
+      - "data/**"
+      - ".github/workflows/**"
   workflow_dispatch: {}
 
 jobs:
@@ -33,16 +33,16 @@ jobs:
         run: |
           cd www
           deno task build
-  
+
       - name: Pack the website with Blumen
-        id: pack_blumen  # <- Required for step outputs
+        id: pack_blumen # <- Required for step outputs
         run: |
-          output=$(deno --allow-read --allow-env --allow-write npm:blumen pack ./www/_site --dist . --name out)
+          output=$(deno --allow-read --allow-env --allow-write npm:blumen@0.16.0 pack ./www/_site --dist . --name out)
           echo "$output"
           cid=$(echo "$output" | grep -oP 'Root CID: \K\S+')
           echo "CID=$cid" >> $GITHUB_OUTPUT
           echo "$output" >> $GITHUB_STEP_SUMMARY
-      
+
       - name: Upload the CAR file via Rsync
         uses: burnett01/rsync-deployments@7.0.2
         with:
@@ -68,17 +68,22 @@ jobs:
       - uses: denoland/setup-deno@v2
         with:
           deno-version: v2.x
-      - name: Install dependencies
-        run: cd www && deno install --allow-scripts
-      - uses: actions/cache@v4
-        with:
-          path: |
-            ~/.deno
-            ~/.cache/deno
-          key: ${{ runner.os }}-deno-${{ hashFiles('**/deps.ts') }}
       - name: Pin to Pinata
-        run: deno --allow-read --allow-env --allow-write --allow-net npm:blumen pin ${{ needs.deploy.outputs.cid }}
+        run: deno --allow-read --allow-env --allow-write --allow-net npm:blumen@0.16.0 pin ${{ needs.deploy.outputs.cid }}
         env:
           BLUMEN_PINATA_TOKEN: ${{ secrets.BLUMEN_PINATA_TOKEN }}
           BLUMEN_STORACHA_PROOF: ${{ secrets.BLUMEN_STORACHA_PROOF }}
           BLUMEN_STORACHA_TOKEN: ${{ secrets.BLUMEN_STORACHA_TOKEN }}
+  ens:
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - name: Propose ENS update to Safe
+        run: deno --allow-read --allow-env --allow-write --allow-net npm:blumen@0.16.0 ens ${{ needs.deploy.outputs.cid }} ${{ variables.BLUMEN_ENS }} --safe ${{ variables.BLUMEN_SAFE_ADDRESS }}
+        env:
+          BLUMEN_PK: ${{ secrets.BLUMEN_PK }}
