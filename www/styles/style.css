@@ -41,7 +41,8 @@ main {
 }
 
 .table {
-  height: 60vh;
+  height: 100%;
+  max-height: 60vh;
   overflow-x: scroll;
   border: 1px solid #676d87;
   border-radius: 8px;
@@ -101,4 +102,8 @@ nav a {
 nav a:hover {
   text-decoration: underline;
   color: var(--fg)
+}
+
+table td {
+  white-space: pre;
 }

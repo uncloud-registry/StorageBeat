@@ -1,4 +1,4 @@
-Service Name,Capacity rent,Capacity rent (normalised) ($/GB-mo),Transit price,100M (KiB/s),100K (ms),Consistency model,Estimated loss rate,SLA,Storage proofs
+Service Name,Capacity rent,Capacity rent ($/GB-mo),Transit price,100M (KiB/s),100K (ms),Consistency model,Estimated loss rate,SLA,Storage proofs
 Hetzner Object Storage (Helsinki),"Free up to 1 TB
 €0.0067/TB-hour",0.0052,"Free up to 1.5GB/h
 €1/TB","p50: 34700
