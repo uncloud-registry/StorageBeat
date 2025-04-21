@@ -37,7 +37,7 @@ jobs:
       - name: Pack the website with Blumen
         id: pack_blumen  # <- Required for step outputs
         run: |
-          output=$(deno -A npm:blumen pack ./www/_site --dist .)
+          output=$(deno --allow-read --allow-env --allow-write npm:blumen pack ./www/_site --dist . --name out)
           echo "$output"
           cid=$(echo "$output" | grep -oP 'Root CID: \K\S+')
           echo "CID=$cid" >> $GITHUB_OUTPUT
@@ -77,7 +77,7 @@ jobs:
             ~/.cache/deno
           key: ${{ runner.os }}-deno-${{ hashFiles('**/deps.ts') }}
       - name: Pin to Pinata
-        run: deno -A npm:blumen pin ${{ needs.deploy.outputs.cid }}
+        run: deno --allow-read --allow-env --allow-write --allow-net npm:blumen pin ${{ needs.deploy.outputs.cid }}
         env:
           BLUMEN_PINATA_TOKEN: ${{ secrets.BLUMEN_PINATA_TOKEN }}
           BLUMEN_STORACHA_PROOF: ${{ secrets.BLUMEN_STORACHA_PROOF }}

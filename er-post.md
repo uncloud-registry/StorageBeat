@@ -6,7 +6,7 @@
 
 Decentralised storage is a technology to outsource the task of data hosting to a peer to peer network of service providers (SPs). Its core offerings are blockchain based payment and storage contract management, cryptographically verifiable service, and provider diversification. This makes it a natural choice for hosting data associated to Ethereum applications. 
 
-The decentralised storage landscape is highly fragmented, and community understanding of the offerings and tradeoffs remains patchy. Confusion about what services and guarantees are actually provided by existing decentralised storage infrastructure seems to be widespread. The most well-known services target only niche use cases such as "permanent" storage, publishing rollup blocks, or archival. While low-resource, high value applications like AMMs can afford to use the expensive, highly redundant storage of chain state, nearly all other applications will need to consider lower cost alternatives. On the other extreme, the common alternative of delegating data hosting responsibility to a company offering pinning services over the IPFS protocol feels like a centralised cop-out.
+The decentralised storage landscape is highly fragmented, and community understanding of the offerings and tradeoffs remains patchy. Confusion about what services and guarantees are actually provided by existing decentralised storage infrastructure seems to be widespread. The most well-known services target only niche use cases such as "permanent" storage, publishing rollup blocks, or archival. While low-resource, high value applications like AMMs can afford to use the expensive, highly redundant storage of chain state, nearly all other applications will need to consider lower cost alternatives. However, most off-chain decentralised storage services do not currently have a strong offering for mutable "hot" storage. On the other extreme, the common alternative of delegating data hosting responsibility to a company offering pinning services over the IPFS protocol feels like a centralised cop-out.
 
 We believe that the Ethereum ecosystem would benefit from a common language and systematic methodology for measuring and comparing the features of different decentralised storage systems, both with each other and with their centralised antecedents. In this post, we introduce the elements of such a framework, which we call **StorageBeat**, focusing particularly on the points of departure between decentralised and centralised options. We discuss costs, performance, and risks the prospective customer must consider when deciding which service to use. Our target audience is a sophisticated user (e.g. IT lead of a web3 or web3-curious company) evaluating storage backends to support higher level services such as a software registry or CMDB.
 
@@ -24,7 +24,7 @@ Other services quote a price for each resource. Typical resource fees are **capa
 
 **Banded Pricing**. Many tradcloud services charge for resource usage in a **banded** system.  For example, a client may pay nothing for the first $100$GiB of egress and a fixed rate $p$ per GiB for subsequent usage. Exotic variants also exist: for example, Backblaze calculates its bands in fixed proportion to the amount of capacity used. We don't know any examples of banded price quotes in decentralised storage.
 
-**Marketplaces.** In some decentralised ecosystems, notably Filecoin and Sia, each peer must quote competitive prices for capacity and egress. It is therefore not meaningful to talk of "the price" of Filecoin and Sia storage, though it can still be useful to summarise the marketplace with a "market price" construction.
+**Marketplaces.** In some decentralised ecosystems, notably Filecoin and Sia, each peer must quote competitive prices for capacity and egress. It is therefore not meaningful to talk of "the price" of Filecoin and Sia storage, though it can still be useful to summarise the marketplace with various market price constructions.
 
 **Permanent storage.** Some storage services quote a single upfront payment for "permanent" or "lifetime" data storage, with the latter term appearing in tradcloud and the former appearing on decentralised platforms. Compared to tradcloud, such quotes seem to be more common in decentralised storage. The price of such a service is expressed in units of [currency]/[capacity]. For the purposes of comparison with services priced in terms of capacity rent, this upfront payment must be amortised to give quantities in the usual units of [currency]/[capacity]•[time]. In StorageBeat, we use a straight line method to amortise and give a **normalised capacity rent** for lifetime contracts. More generally, clients with concrete use cases should amortise over the period of expected usage of the service.[^risk]
 
@@ -48,7 +48,7 @@ While **nondeterminism** in the state of external systems is already an issue fo
 
 Since tracking and reporting performance across many workloads and control scenarios is rather complex, for publicly communicating performance measurements it is helpful to quote simple summary statistics. In the StorageBeat website we have quoted estimates of expected **latency** (a.k.a. time to first byte) and **steady state throughput**[^sst-def] (SST). For reasons of benchmark portability, we estimate these as the request completion time for a very small file and the mean download speed of a request for a large file, respectively.
 
-The **error rate** and **timeout rate** (given a fixed time limit) are both important and easy-to-understand measures of availability. For traditional cloud service providers, error code rate limits (specifically server-side HTTP 5xx codes) are usually guaranteed by an SLA which offers account credits as compensation if limits are exceeded.
+The **error rate** and **timeout rate** (given a fixed time limit) are both important and easy-to-understand measures of availability. For traditional cloud service providers, error code rate limits (specifically server-side HTTP 5xx codes) are usually guaranteed by an SLA which offers account credits as compensation if limits are exceeded. We haven't yet begun systematically measuring these rates on StorageBeat.
 
 In future work, we also aim to introduce systematic measurements of client-side resource usage.
 
@@ -58,7 +58,7 @@ In our experiments, we used the open-source tool [Artillery](https://github.com/
 
 ## Risk
 
-Each storage service is associated with a set of risks that something will impair our use of the service or increase our costs in the future. Weighing up these risks is part of the job of selecting which service to use. Part of our job, then, is to build out a risk framework for storage services. Since risk analysis requires us to consider not only what service ought to be delivered, but also all the reasons that it might not, this risk framework actually comprises the bulk of the task.
+Each storage service is associated with a set of risks that something will impair our use of the service or increase our costs in the future. Weighing up these risks is part of the job of selecting which service to use. Part of the job of StorageBeat, then, is to build out a risk framework for storage services. Since risk analysis requires us to consider not only what service ought to be delivered, but also all the reasons that it might not, this risk framework actually comprises the bulk of the task.
 
 Since the core offering of decentralised storage is the ability to mitigate counterparty risks through **provider diversification**, a good risk framework is particularly essential to communicating its selling points vis-à-vis tradcloud storage.
 
@@ -74,7 +74,8 @@ If we aren't able to use the service, the service is *unavailable.* Unavailabili
 
 The risk of global outages can be mitigated in the following ways:
 
-- **SLA.** A service-level agreement provides a definition of the service and often an indemnity for some type of service failure. Tradcloud services typically offer compensation for an *error rate* exceeding a certain limit, e.g. 99% in a five minute window.[^s3-sla][^sla.md]
+- **SLA.** A service-level agreement provides a definition of the service and often an indemnity for some type of service failure. Tradcloud services typically offer compensation for an *error rate* exceeding a certain limit, e.g. 99% in a five minute window.[^s3-sla][^sla.md] On the flip side, Filecoin customers may be compensated in the event of a durability failure in the form of early termination of a storage contract.
+  In StorageBeat we report whether we could find an SLA, whether it carries an indemnity, and summarise what is covered.
 
 - **Survival analysis.** Global, permanent outages arise when a service provider ceases operations. To mitigate this, estimate the survival probability of each service provider over the desired service period and allocate to providers with better scores.
 
@@ -92,7 +93,9 @@ We turn now to the risk of specific data loss, or **durability** risks.[^durabil
 [^durability.md]: See also [`./notes/risk/durability.md`](https://github.com/uncloud-registry/StorageBeat/blob/main/notes/risk/durability.md).
 
 * **Storage proofs.** A typical feature of web3 storage systems is that a system of cryptographic proofs provides some assurance that data remains available to the service provider at the time the proof is constructed. Attaching explicit incentives to storage proof publication is supposed to cultivate a population of providers who make efforts to retain access to client data in the future so that they may claim these incentives. Incentives may be in the form of revenue or the threat of collateral seizure, a.k.a. *slashing*.
-* **Durability reporting.** Storage services ought to essentially never lose data. It can therefore be challenging to put a credible number to object loss rate on reasonably stable services. Tradcloud services report durability on the "nines" basis, where object loss rate per year is bounded by a power of ten. Though the basic methodology to achieve these numbers is documented,[^backblaze] such reports are not usually backed up by evidence or legal guarantees.[^hetzner-durability] In decentralised cloud, the global rate of node failure or data loss can be observed by tracking missed storage proofs. The tradcloud methodology could then be applied to extrapolate the observed rate to a formal probability of losing a replicated or otherwise expanded object distributed over the node population.[^codex]
+  In the StorageBeat website we simply report the developers' own name for the storage proof system each service uses. In future, it would be more useful to develop a detailed comparison framework that clarifies the risk vectors from a user-centric perspective.
+* **Durability reporting.** Storage services ought to essentially never lose data. It can therefore be challenging to put a credible number to object loss rate on reasonably stable services. Tradcloud services report durability on the "nines" basis, where object loss rate per year is bounded by a power of ten. Though the basic methodology to achieve these numbers is documented,[^backblaze] such reports are not usually backed up by evidence or legal guarantees.[^hetzner-durability] 
+  In decentralised cloud, the global rate of node failure or data loss can be observed by tracking missed storage proofs. The tradcloud methodology could then be applied to extrapolate the observed rate to a formal probability of losing a replicated or otherwise expanded object distributed over the node population.[^codex] As of yet we haven't carried out any such calculations.
 
 [^s3-sla]: https://aws.amazon.com/s3/sla/
 [^backblaze]: https://www.backblaze.com/blog/cloud-storage-durability/
@@ -135,3 +138,5 @@ We have listed elements of costs, performance, and risk analysis pertinent to th
 ## Acknolwedgements
 
 The StorageBeat team was supported by Ethereum Foundation ESP grant FY24-1744.
+
+We thank Rahul Saghar, Viktor Tròn, 
