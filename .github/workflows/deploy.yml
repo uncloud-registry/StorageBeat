@@ -84,6 +84,6 @@ jobs:
         with:
           deno-version: v2.x
       - name: Propose ENS update to Safe
-        run: deno --allow-read --allow-env --allow-write --allow-net npm:blumen@0.16.0 ens ${{ needs.deploy.outputs.cid }} ${{ variables.BLUMEN_ENS }} --safe ${{ variables.BLUMEN_SAFE_ADDRESS }}
+        run: deno --allow-read --allow-env --allow-write --allow-net npm:blumen@0.16.0 ens ${{ needs.deploy.outputs.cid }} ${{ vars.BLUMEN_ENS }} --safe ${{ vars.BLUMEN_SAFE_ADDRESS }}
         env:
           BLUMEN_PK: ${{ secrets.BLUMEN_PK }}
