@@ -10,7 +10,7 @@ The decentralised storage landscape is highly fragmented, and community understa
 
 We believe that the Ethereum ecosystem would benefit from a common language and systematic methodology for measuring and comparing the features of different decentralised storage systems, both with each other and with their centralised antecedents. In this post, we introduce the elements of such a framework, which we call **StorageBeat**, focusing particularly on the points of departure between decentralised and centralised options. We discuss costs, performance, and risks the prospective customer must consider when deciding which service to use. Our target audience is a sophisticated user (e.g. IT lead of a web3 or web3-curious company) evaluating storage backends to support higher level services such as a software registry or CMDB.
 
-To illustrate how such elements can be used in practice, we've gathered data on a selection of representative services and published them as a static website: https://storagebeat.fyi. More in-depth exposition and technical details on each element can be found in the notes directory of our GitHub repository: https://github.com/uncloud-registry/StorageBeat/tree/main/notes
+To illustrate how such elements can be used in practice, we've gathered data on a selection of representative services and published them as a static website: https://bafybeif42n2bg2kevqmkzoctaiwmocryrbuw6qbwnzcty2m67bxm4xoyh4.ipfs.dweb.link/. More in-depth exposition and technical details on each element can be found in the notes directory of our GitHub repository: https://github.com/uncloud-registry/StorageBeat/tree/main/notes
 
 ## Costs
 
@@ -139,4 +139,4 @@ We have listed elements of costs, performance, and risk analysis pertinent to th
 
 The StorageBeat team was supported by Ethereum Foundation ESP grant FY24-1744.
 
-We thank Rahul Saghar, Viktor Tròn, 
+We thank Rahul Saghar and Viktor Tròn for feedback on an early draft of this post.
