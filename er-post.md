@@ -139,4 +139,4 @@ We have listed elements of costs, performance, and risk analysis pertinent to th
 
 The StorageBeat team was supported by Ethereum Foundation ESP grant FY24-1744.
 
-We thank Rahul Saghar and Viktor Tròn for feedback on an early draft of this post.
+We thank Rahul Saghar, Viktor Tròn, for feedback and discussions.
