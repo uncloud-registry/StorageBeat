@@ -1,3 +1,10 @@
+---
+topic: Sharding
+tags: data-availability, storage-fee-rent
+---
+
+
+
 # StorageBeat: Towards an evaluation framework for decentralised storage
 
 **TL;DR.** We introduce the beginnings of a framework for systematically evaluating decentralised storage platforms against one another and against traditional, centralised cloud storage services. We introduce summary metrics and methodology for performance measurements, costs, and risk assessments associated with different types of solution, and present a sample application of the framework in a web frontend modelled after L2Beat and WalletBeat. 
@@ -10,7 +17,7 @@ The decentralised storage landscape is highly fragmented, and community understa
 
 We believe that the Ethereum ecosystem would benefit from a common language and systematic methodology for measuring and comparing the features of different decentralised storage systems, both with each other and with their centralised antecedents. In this post, we introduce the elements of such a framework, which we call **StorageBeat**, focusing particularly on the points of departure between decentralised and centralised options. We discuss costs, performance, and risks the prospective customer must consider when deciding which service to use. Our target audience is a sophisticated user (e.g. IT lead of a web3 or web3-curious company) evaluating storage backends to support higher level services such as a software registry or CMDB.
 
-To illustrate how such elements can be used in practice, we've gathered data on a selection of representative services and published them as a static website: https://bafybeif42n2bg2kevqmkzoctaiwmocryrbuw6qbwnzcty2m67bxm4xoyh4.ipfs.dweb.link/. More in-depth exposition and technical details on each element can be found in the notes directory of our GitHub repository: https://github.com/uncloud-registry/StorageBeat/tree/main/notes
+To illustrate how such elements can be used in practice, we've gathered data on a selection of representative services and published them as a static website: https://storagebeat.eth.link/. More in-depth exposition and technical details on each element can be found in the notes directory of our GitHub repository: https://github.com/uncloud-registry/StorageBeat/tree/main/notes
 
 ## Costs
 
@@ -135,8 +142,8 @@ We have listed elements of costs, performance, and risk analysis pertinent to th
   * Develop durability model and carry out systematic measurements of durability on decentralised systems for which it makes sense.
   * More work is needed on consistency, authorisation, and privacy, which we have barely addressed. If you are an expert in one of these fields, please reach out so we can work together to enhance our models.
 
-## Acknolwedgements
+## Acknowledgements
 
-The StorageBeat team was supported by Ethereum Foundation ESP grant FY24-1744.
+The StorageBeat team ([@awma](https://x.com/awmacp), [aata.eth](https://x.com/0xAata), [v1rtl.eth](https://warpcast.com/v1rtl.eth), Evgeni) was supported by Ethereum Foundation ESP grant FY24-1744.
 
-We thank Rahul Saghar, Viktor Tròn, for feedback and discussions.
+We thank Rahul Saghar, Viktor Trón, and the Codex Research team for feedback and discussions.
