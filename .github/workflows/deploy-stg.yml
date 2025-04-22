@@ -2,14 +2,9 @@ name: Deploy on IPFS (Staging)
 on:
   push:
     paths:
-      - 'www/**'
-      - 'data/**'
-      - '.github/workflows/**'
-  pull_request:
-    paths:
-      - 'www/**'
-      - 'data/**'
-      - '.github/workflows/**'
+      - "www/**"
+      - "data/**"
+      - ".github/workflows/**"
   workflow_dispatch: {}
 
 jobs:
@@ -35,10 +30,10 @@ jobs:
         run: |
           cd www
           deno task build
-  
+
       - name: Deploy to Storacha with Blumen
         run: |
-          output=$(deno --allow-read --allow-env --allow-write --allow-net npm:blumen deploy ./www/_site)
+          output=$(deno --allow-read --allow-env --allow-write --allow-net npm:blumen@0.16.0 deploy ./www/_site)
           echo "$output"
           cid=$(echo "$output" | grep -oP 'Root CID: \K\S+')
           echo "CID=$cid" >> $GITHUB_OUTPUT
