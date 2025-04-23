@@ -39,11 +39,15 @@ config:
       apdex: {}
       metrics-by-endpoint:
         useOnlyRequestNames: true
+    processor: './processorSeq.js'
 scenarios:
   - name: "Download file"
     flow:
       - loop:
+        - function: 'startTimer'
         - get:
             url: '/{{ $loopElement.existing }}'
             name: "Existing file"
+        - function: 'stopTimer'
+        - think: 30
         over: fileIds

@@ -39,7 +39,7 @@ config:
       apdex: {}
       metrics-by-endpoint:
         useOnlyRequestNames: true
-  processor: './processor.js'
+  processor: './processorLimit.js'
 scenarios:
   - name: "Download file"
     afterScenario: 'finishDownload'
