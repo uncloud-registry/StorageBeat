@@ -11,12 +11,20 @@
 ### Tasks
 
 - [x] Develop rationale and commit to this repo. @awmacpherson
-  - [ ] First feedback cycle.
+  - [x] First feedback cycle.
 - [x] Establish experimental design + commit.
 - [ ] Implement benchmark suite. @eshavkun
+  - [ ] Tidy up source directory. Put scripts, yaml, units, templates etc. into their own subdirectories.
 - [x] Select target services + commit.
 - [x] Obtain quotas + access and share.
-- [ ] Run benchmarks. (Where should we save outputs?)
+- [ ] Run benchmarks + collect results.
+  - [x] Prepare shared directory `/var/perf/` on experiment runner.
+  - [ ] Generate usable 1x100M samples (at least 30)
+  - [ ] Why are some tests showing up on Artillery Cloud but not in the shared directory?
+  - [ ] Evaluate whether individual download times can be extracted from the 50x100M sequential workloads (and if so, extract them).
+- [ ] Documentation.
+  - [ ] Technical notes on integration with each of the four target services. (Implementation details + log.)
+  - [ ] Evaluation of results. @mac
 
 ## Design rationale
 

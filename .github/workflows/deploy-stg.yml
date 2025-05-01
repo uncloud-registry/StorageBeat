@@ -1,0 +1,43 @@
+name: Deploy on IPFS (Staging)
+on:
+  push:
+    paths:
+      - "www/**"
+      - "data/**"
+      - ".github/workflows/**"
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.2.2
+      - name: Install dependencies
+        run: cd www && deno install --allow-scripts
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.deno
+            ~/.cache/deno
+          key: ${{ runner.os }}-deno-${{ hashFiles('**/deps.ts') }}
+
+      - name: Build website
+        run: |
+          cd www
+          deno task build
+
+      - name: Deploy to Storacha with Blumen
+        run: |
+          output=$(deno --allow-read --allow-env --allow-write --allow-net npm:blumen@0.16.0 deploy ./www/_site)
+          echo "$output"
+          cid=$(echo "$output" | grep -oP 'Root CID: \K\S+')
+          echo "CID=$cid" >> $GITHUB_OUTPUT
+          echo "$output" >> $GITHUB_STEP_SUMMARY
+        env:
+          BLUMEN_STORACHA_PROOF: ${{ secrets.BLUMEN_STORACHA_PROOF }}
+          BLUMEN_STORACHA_TOKEN: ${{ secrets.BLUMEN_STORACHA_TOKEN }}

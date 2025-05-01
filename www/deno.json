@@ -1,0 +1,26 @@
+{
+  "imports": {
+    "@std/csv": "jsr:@std/csv@^1.0.5",
+    "lume/": "https://deno.land/x/lume@v2.5.3/",
+    "lume/jsx-runtime": "https://deno.land/x/ssx@v0.1.8/jsx-runtime.ts"
+  },
+  "tasks": {
+    "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
+    "build": "deno task lume",
+    "serve": "deno task lume -s"
+  },
+  "compilerOptions": {
+    "types": [
+      "lume/types.ts"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "lume"
+  },
+  "fmt": {
+    "singleQuote": true,
+    "semiColons": false
+  },
+  "unstable": [
+    "temporal"
+  ]
+}

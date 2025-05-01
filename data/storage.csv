@@ -1,0 +1,25 @@
+Service Name,Capacity rent,Capacity rent ($/GB-mo),Transit price,100M (KiB/s),100K (ms),Consistency model,Estimated loss rate,SLA,Storage proofs
+Hetzner Object Storage (Helsinki),"Free up to 1 TB
+€0.0067/TB-hour",0.0052,"Free up to 1.5GB/h
+€1/TB","p50: 34700
+p95: 33300
+p99: 32700¹","p50: 151
+p95: 209
+p99: 297¹",No data,No data,No data,None
+Amazon S3 Standard,$0.023/GB-month,0.023,"0/GB⁴",No data,No data,Strong,0.000000001 (self-reported),Availability (99%),None
+IPFS/Pinata,"$20/month for 1TB
+$0.07/GB-month",0.07,"$20/month for 500GB
+$0.1/GB","p50: 1630
+p95: 776
+p99: 745","p50: 1249
+p95: 2508589
+p99: 3476379",Immutable,No data,No data,None
+EthSwarm,"25499 PLUR/chunk-block²",0.047,No data,"p50: 776
+p95: 552
+p99: 170","p50: 213
+p95: 375
+p99: 5698","Immutable (content-addressed)
+Exotic (feed)",No data,None,R8 sampling
+arweave.net/Arweave,"1.77 AR/GB³",0.16,$0,No data,"p50: 963 
+p95: 105 
+p99: 1075",Immutable,No data,None,SPoRA
